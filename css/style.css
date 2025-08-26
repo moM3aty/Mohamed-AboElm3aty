@@ -1135,7 +1135,7 @@ html[dir="rtl"] .modal-header .btn-close{
 .cert-image-container {
     text-align: center;
     overflow: auto;
-    max-height: 500px;
+    max-height:70vh;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
@@ -1523,4 +1523,719 @@ li{
 .admin-item-card .badge {
     font-size: 0.75rem;
     padding: 0.3em 0.6em;
+}
+
+.portfolio-filters-new {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.filter-btn-new {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.filter-btn-new:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn-new.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Style for items that are being filtered out */
+.portfolio-item.hide {
+    display: none;
+}
+
+.portfolio-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    perspective: 1500px; /* This enables the 3D space for child elements */
+}
+
+/* 3D Card Item */
+.portfolio-card-new {
+    aspect-ratio: 16 / 10;
+    border-radius: var(--border-radius-lg);
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-card-new .card-inner {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-card-new:hover .card-inner {
+    transform: translateZ(40px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.portfolio-card-new .card-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius-lg);
+    transition: filter 0.5s ease;
+}
+
+.portfolio-card-new:hover .card-bg-image {
+    filter: brightness(0.7);
+}
+
+.portfolio-card-new .card-content {
+    position: absolute;
+    inset: 0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(10, 10, 35, 0.9), transparent 60%);
+    color: white;
+    transform: translateZ(50px); /* Pushes content forward */
+}
+
+.portfolio-card-new .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.portfolio-card-new .card-links {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.portfolio-card-new:hover .card-links {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-card-new .card-links a,
+.portfolio-card-new .card-links button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.portfolio-card-new .card-links a:hover,
+.portfolio-card-new .card-links button:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+
+/* New Fullscreen Image Gallery Modal */
+.gallery-modal-new {
+    position: fixed;
+    inset: 0;
+    z-index: 1060;
+    background: rgba(10, 10, 35, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.gallery-modal-new.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-modal-new .swiper-container {
+    width: 90%;
+    height: 90%;
+}
+
+.gallery-modal-new .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-modal-new .swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--border-radius-md);
+}
+
+.gallery-modal-new .swiper-button-next,
+.gallery-modal-new .swiper-button-prev {
+    color: var(--primary-color);
+    --swiper-navigation-size: 30px;
+}
+
+.gallery-modal-new .modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-modal-new .modal-close-btn:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: var(--primary-color);
+}
+
+.portfolio-grid-magnetic {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem; /* Increased gap for better effect */
+}
+
+/* Magnetic Card Item */
+.portfolio-card-magnetic {
+    aspect-ratio: 16 / 10;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    background-color: var(--bg-alt);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+                box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-card-magnetic::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--border-radius-lg);
+    background: conic-gradient(from 90deg at 50% 50%, 
+        var(--primary-color), var(--secondary-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.portfolio-card-magnetic:hover::before {
+    opacity: 1;
+}
+
+.card-inner-magnetic {
+    position: absolute;
+    inset: 1px; /* Creates the border effect */
+    background-color: var(--bg-alt);
+    border-radius: calc(var(--border-radius-lg) - 1px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bg-image-magnetic {
+    height: 65%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(50%);
+}
+
+.portfolio-card-magnetic:hover .card-bg-image-magnetic {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.card-content-magnetic {
+    padding: 1rem 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title-magnetic {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.card-links-magnetic {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.card-links-magnetic a,
+.card-links-magnetic button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-links-magnetic a:hover,
+.card-links-magnetic button:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.portfolio-item {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.portfolio-item .portfolio-image {
+    position: relative;
+}
+
+.portfolio-item .portfolio-image img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to top, rgba(10, 10, 35, 0.95), transparent 70%);
+    opacity: 1; /* Always visible */
+}
+
+.portfolio-overlay h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    transform: translateY(100px); /* Initially hidden */
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay h4 {
+    transform: translateY(0);
+}
+
+.portfolio-overlay .portfolio-links {
+    opacity: 0;
+    transform: translateY(100px); /* Initially hidden */
+    transition: all 0.4s ease 0.1s;
+}
+
+.portfolio-item:hover .portfolio-overlay .portfolio-links {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fullscreen Immersive Modal */
+.fullscreen-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1060;
+    background: rgba(10, 10, 35, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.fullscreen-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fullscreen-modal .swiper-container {
+    width: 90%;
+    height: 90%;
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fullscreen-modal.show .swiper-container {
+    transform: scale(1);
+}
+
+.fullscreen-modal .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-modal .swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.fullscreen-modal .swiper-button-next,
+.fullscreen-modal .swiper-button-prev {
+    color: var(--primary-color);
+    --swiper-navigation-size: 30px;
+}
+
+.fullscreen-modal .modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 10;
+}
+
+.fullscreen-modal .modal-close-btn:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: var(--primary-color);
+}
+
+.portfolio-links .view-design-btn {
+    /* --- Shape & Size --- */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    
+    /* --- Glassmorphism Effect --- */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    /* --- Icon & Centering --- */
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+
+    /* --- Smooth Transitions --- */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-links .view-design-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
+    border-color: var(--primary-color);
+}
+
+.portfolio-links .view-design-btn i {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-links .view-design-btn:hover i {
+    transform: scale(1.1);
+}
+
+#load-more-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#load-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+}
+
+#load-more-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#load-more-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.search-bar-wrapper {
+    position: relative;
+}
+
+.search-bar-wrapper .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    z-index: 2; /* Ensure icon is above input */
+}
+
+[dir="rtl"] .search-bar-wrapper .search-icon {
+    left: auto;
+    right: 1.25rem;
+}
+
+.search-bar-wrapper .form-control {
+    background-color: rgba(26, 26, 62, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem 0.8rem 3.5rem; /* Padding for icon on the left */
+    color: var(--text-primary);
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+[dir="rtl"] .search-bar-wrapper .form-control {
+    padding: 0.8rem 3.5rem 0.8rem 1.5rem; /* Padding for icon on the right */
+}
+
+.search-bar-wrapper .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.search-bar-wrapper .form-control:focus {
+    background-color: var(--bg-alt);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.search-bar-wrapper:focus-within .search-icon {
+    color: var(--primary-color);
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-primary);
+}
+
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+.portfolio-card-design {
+    background-color: var(--bg-alt);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards have the same height */
+}
+
+.portfolio-card-design:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.design-image-wrapper {
+    overflow: hidden;
+    flex-grow: 1; /* Allows the image to take up available space */
+}
+
+.design-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card-design:hover .design-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.design-info {
+    padding: 1rem 1.25rem;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes info to the bottom */
+}
+
+.design-info h5 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.portfolio-grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(525px, 1fr));
+    grid-auto-rows: 10px; /* A small unit for flexible row spanning */
+    gap: 1.5rem;
+}
+
+/* A wrapper for each item to handle grid placement */
+.portfolio-item-wrapper {
+    grid-row-end: span 2; /* Default span, will be calculated by JS */
+    break-inside: avoid;
+}
+
+/* Styling for the portfolio item itself (used on both pages) */
+.portfolio-item {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.portfolio-item .portfolio-image {
+    position: relative;
+    height: 100%;
+}
+
+.portfolio-item .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to top, rgba(10, 10, 35, 0.95), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay h4 {
+    transform: translateY(0);
+}
+
+.portfolio-overlay .portfolio-links {
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+}
+
+.portfolio-item:hover .portfolio-overlay .portfolio-links {
+    transform: translateY(0);
 }

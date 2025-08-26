@@ -6,7 +6,7 @@ class LanguageManager {
 
     init() {
         this.updateLanguage();
-        
+
         const langToggle = document.getElementById('lang-toggle');
         if (langToggle) {
             langToggle.addEventListener('click', () => this.toggleLanguage());
@@ -33,7 +33,7 @@ class LanguageManager {
             const text = element.getAttribute(`data-${this.currentLang}`);
             if (text) element.textContent = text;
         });
-        
+
         document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]').forEach(element => {
             const placeholder = element.getAttribute(`data-${this.currentLang}-placeholder`);
             if (placeholder) element.setAttribute('placeholder', placeholder);
@@ -57,49 +57,19 @@ class CertificateModal {
         if (this.modalElement && typeof bootstrap !== "undefined" && bootstrap.Modal) {
             this.modal = new bootstrap.Modal(this.modalElement);
             this.init();
-        } else {
-            console.warn("Bootstrap Modal not available or #certificateModal not found.");
         }
     }
 
     init() {
-    this.certificates = {
-    cert1: {
-        title: 'Intensive Program - Full Stack .Net',
-        image: '../assets/certificates/certificate1.png', 
-        pdf: 'assets/certificates/ITI4Month.pdf'  
-    },
-    cert2: {
-        title: 'Programming with JavaScript',
-        image: '../assets/certificates/certificate2.png',
-        pdf: 'assets/certificates/JSMeta.pdf'
-    },
-    cert3: {
-        title: 'CCNA 200-301',
-        image: '../assets/certificates/certificate3.png',
-        pdf: 'assets/certificates/CCNA 200-301.pdf'
-    },
-    cert4: {
-        title: 'MCSA 2016',
-        image: '../assets/certificates/certificate7.jpg',
-        pdf: 'assets/certificates/SystemAdministration.pdf'
-    },
-    cert5: {
-        title: 'Summer Trainee - ASP.NET MVC',
-        image: '../assets/certificates/certificate4.png',
-        pdf: 'assets/certificates/ITI.pdf'
-    },
-    cert6: {
-        title: 'Bachelor of Science in Computer Science',
-        image: '../assets/certificates/certificate5.png',
-        pdf: 'assets/certificates/Graduate.pdf'
-    },
-    cert7: {
-        title: 'Thanks and Appreciation',
-        image: '../assets/certificates/certificate6.png',
-        pdf: 'assets/certificates/LifeMakers.pdf'
-    }
-};
+        this.certificates = {
+            cert1: { title: 'Intensive Program - Full Stack .Net', image: 'assets/certificates/certificate1.png', pdf: 'assets/certificates/ITI4Month.pdf' },
+            cert2: { title: 'Programming with JavaScript', image: 'assets/certificates/certificate2.png', pdf: 'assets/certificates/JSMeta.pdf' },
+            cert3: { title: 'CCNA 200-301', image: 'assets/certificates/certificate3.png', pdf: 'assets/certificates/CCNA 200-301.pdf' },
+            cert4: { title: 'MCSA 2016', image: 'assets/certificates/certificate7.jpg', pdf: 'assets/certificates/SystemAdministration.pdf' },
+            cert5: { title: 'Summer Trainee - ASP.NET MVC', image: 'assets/certificates/certificate4.png', pdf: 'assets/certificates/ITI.pdf' },
+            cert6: { title: 'Bachelor of Science in Computer Science', image: 'assets/certificates/certificate5.png', pdf: 'assets/certificates/Graduate.pdf' },
+            cert7: { title: 'Thanks and Appreciation', image: 'assets/certificates/certificate6.png', pdf: 'assets/certificates/LifeMakers.pdf' }
+        };
 
         document.querySelectorAll('.view-cert').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -111,39 +81,24 @@ class CertificateModal {
         document.getElementById('zoom-in')?.addEventListener('click', () => this.zoomIn());
         document.getElementById('zoom-out')?.addEventListener('click', () => this.zoomOut());
         document.getElementById('download-cert')?.addEventListener('click', () => this.downloadCertificate());
-
         this.modalElement?.addEventListener('hidden.bs.modal', () => this.resetZoom());
     }
 
     openCertificate(certId) {
-    const cert = this.certificates[certId];
-    if (!cert) return;
-
-    this.currentCert = cert;
-
-    if (this.certImage) {
-        this.certImage.src = cert.image;   
-        this.certImage.alt = cert.title;
+        const cert = this.certificates[certId];
+        if (!cert) return;
+        this.currentCert = cert;
+        if (this.certImage) {
+            this.certImage.src = cert.image;
+            this.certImage.alt = cert.title;
+        }
+        this.resetZoom();
+        this.modal?.show();
     }
 
-    this.resetZoom();
-    this.modal?.show();
-}
-
-    zoomIn() {
-        this.currentZoom = Math.min(this.currentZoom * 1.2, 3);
-        this.updateZoom();
-    }
-
-    zoomOut() {
-        this.currentZoom = Math.max(this.currentZoom / 1.2, 0.5);
-        this.updateZoom();
-    }
-
-    resetZoom() {
-        this.currentZoom = 1;
-        this.updateZoom();
-    }
+    zoomIn() { this.currentZoom = Math.min(this.currentZoom * 1.2, 3); this.updateZoom(); }
+    zoomOut() { this.currentZoom = Math.max(this.currentZoom / 1.2, 0.5); this.updateZoom(); }
+    resetZoom() { this.currentZoom = 1; this.updateZoom(); }
 
     updateZoom() {
         if (this.certImage) {
@@ -153,15 +108,15 @@ class CertificateModal {
     }
 
     downloadCertificate() {
-    if (this.currentCert) {
-        const link = document.createElement('a');
-        link.href = this.currentCert.pdf;   
-        link.download = `${this.currentCert.title}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        if (this.currentCert) {
+            const link = document.createElement('a');
+            link.href = this.currentCert.pdf;
+            link.download = `${this.currentCert.title}.pdf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     }
-}
 }
 
 class NavigationManager {
@@ -170,17 +125,21 @@ class NavigationManager {
     }
 
     init() {
-        document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('.navbar-nav a[href]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse?.classList.contains('show')) {
-                        bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                const targetId = anchor.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80;
+                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse?.classList.contains('show')) {
+                            bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                        }
+                    } else if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
+                        window.location.href = 'index.html' + targetId;
                     }
                 }
             });
@@ -193,19 +152,16 @@ class NavigationManager {
     updateActiveLink() {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        
         let currentSection = '';
-        
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 150;
             const sectionHeight = section.offsetHeight;
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 currentSection = section.getAttribute('id');
             }
         });
-
         navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
+            link.classList.toggle('active', link.getAttribute('href').endsWith(`#${currentSection}`));
         });
     }
 
@@ -227,29 +183,10 @@ class AnimationObserver {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    if (entry.target.classList.contains('skill-card')) {
-                        this.animateSkillBar(entry.target);
-                    }
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll([
-            '.skill-card',
-            '.cert-card',
-            '.about-content',
-            '.contact-item'
-        ].join(',')).forEach(el => observer.observe(el));
-    }
-
-    animateSkillBar(skillCard) {
-        const skillBar = skillCard.querySelector('.skill-bar');
-        if (skillBar) {
-            setTimeout(() => {
-                const skillWidth = skillCard.getAttribute('data-skill') + '%';
-                skillBar.style.setProperty('--skill-width', skillWidth);
-            }, 300);
-        }
+        document.querySelectorAll('.skill-card, .cert-card, .about-content, .contact-item').forEach(el => observer.observe(el));
     }
 }
 
@@ -257,289 +194,325 @@ class PortfolioManager {
     constructor() {
         this.portfolioItems = [];
         this.langManager = new LanguageManager();
+        this.itemsPerPage = 10;
+        this.currentPage = 1;
+        this.currentFilter = 'all';
+        this.currentSearch = '';
+        this.swiperInstance = null;
         this.init();
     }
 
     async init() {
         this.portfolioItems = await db.getAllItems();
-        this.renderPortfolio();
-        this.initCarousel();
-        this.initDesignModal();
+        this.portfolioItems.sort((a, b) => (a.displayOrder || 999) - (b.displayOrder || 999));
+        this.renderItems();
+        this.attachEventListeners();
     }
 
-    renderPortfolio() {
-        const projectsGrid = document.getElementById('portfolio-projects-grid');
-        const designsGrid = document.getElementById('portfolio-designs-grid');
-        const projectsGridFull = document.getElementById('portfolio-projects-grid-full');
-        const designsGridFull = document.getElementById('portfolio-designs-grid-full');
+    attachEventListeners() {
+        const filters = document.getElementById('portfolio-filters');
+        if (filters) filters.addEventListener('click', (e) => this.handleFilterClick(e));
 
-        const grids = [projectsGrid, designsGrid, projectsGridFull, designsGridFull];
-        grids.forEach(grid => { if (grid) grid.innerHTML = '' });
+        const searchInput = document.getElementById('portfolio-search');
+        if (searchInput) searchInput.addEventListener('input', (e) => this.handleSearch(e));
 
-        this.portfolioItems.forEach((item, index) => {
-            if (item.type === 'project') {
-                const projectHtml = this.createProjectItem(item);
-                if (projectsGrid) projectsGrid.innerHTML += projectHtml;
-                if (projectsGridFull) projectsGridFull.innerHTML += projectHtml;
-            } else if (item.type === 'design') {
-                const designHtml = this.createDesignItem(item, index);
-                if (designsGrid) designsGrid.innerHTML += designHtml;
-                if (designsGridFull) designsGridFull.innerHTML += designHtml;
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        if (loadMoreBtn) loadMoreBtn.addEventListener('click', () => this.handleLoadMore());
+
+        document.body.addEventListener('click', (e) => {
+            const viewButton = e.target.closest('.view-design-btn');
+            if (viewButton) {
+                e.preventDefault();
+                const index = parseInt(viewButton.dataset.index);
+                const item = this.portfolioItems[index];
+                if (item && item.galleryImages) this.openDesignModal(item);
             }
         });
-        this.langManager.updateLanguage(); // Re-apply language after dynamic render
+
+        const closeModalBtn = document.getElementById('modal-close-btn-immersive');
+        if (closeModalBtn) closeModalBtn.addEventListener('click', () => this.closeDesignModal());
     }
 
-    createProjectItem(item) {
-        const imageUrl = item.coverImage instanceof Blob ? URL.createObjectURL(item.coverImage) : item.coverImage;
-        return `
-            <div class="col-md-6 col-xl-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="${imageUrl}" alt="${item.titleEn}">
-                        <div class="portfolio-overlay">
-                            <h4 data-en="${item.titleEn}" data-ar="${item.titleAr}">${item.titleEn}</h4>
-                            <div class="portfolio-links">
-                                <a href="${item.liveUrl}" target="_blank" class=""><i class="fas fa-external-link-alt"></i></a>
-                                <a href="${item.githubUrl}" target="_blank" class=""><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
+    renderItems() {
+        const isHomePage = document.getElementById('portfolio-grid-home') !== null;
+        if (isHomePage) this.renderHomePageItems();
+        else this.renderPortfolioPageItems();
     }
 
-    createDesignItem(item, index) {
-        const imageUrl = item.coverImage instanceof Blob ? URL.createObjectURL(item.coverImage) : item.coverImage;
-        return `
-            <div class="swiper-slide">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="${imageUrl}" alt="${item.titleEn}">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-links">
-                                <button class="view-design" data-index="${index}">
-                                    <i class="fa-solid fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
+    renderHomePageItems() {
+        const grid = document.getElementById('portfolio-grid-home');
+        if (!grid) return;
+        grid.innerHTML = '';
+        const items = this.portfolioItems.slice(0, 6);
+        items.forEach(item => {
+            grid.innerHTML += this.createPortfolioItemHTML(item, true);
+        });
+        this.langManager.updateLanguage();
     }
 
-    initCarousel() {
-        if (document.querySelector('.designs-carousel')) {
-            new Swiper('.designs-carousel', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: { slidesPerView: 2, spaceBetween: 20 },
-                    768: { slidesPerView: 3, spaceBetween: 40 },
-                    1024: { slidesPerView: 4, spaceBetween: 50 },
-                }
+    renderPortfolioPageItems() {
+        const grid = document.getElementById('portfolio-grid-full');
+        if (!grid) return;
+
+        let filteredItems = this.portfolioItems;
+        if (this.currentFilter !== 'all') {
+            filteredItems = filteredItems.filter(item => item.type === this.currentFilter);
+        }
+
+        if (this.currentSearch) {
+            const lowerCaseSearch = this.currentSearch.toLowerCase();
+            filteredItems = filteredItems.filter(item =>
+                item.titleEn.toLowerCase().includes(lowerCaseSearch) ||
+                item.titleAr.toLowerCase().includes(lowerCaseSearch)
+            );
+        }
+
+        const itemsToShow = filteredItems.slice(0, this.currentPage * this.itemsPerPage);
+
+        grid.innerHTML = '';
+        if (itemsToShow.length === 0) {
+            grid.innerHTML = `<p class="text-center text-muted col-12">No items found.</p>`;
+        } else {
+            itemsToShow.forEach(item => {
+                grid.innerHTML += this.createPortfolioItemHTML(item, false);
             });
+        }
+
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        if (loadMoreBtn) loadMoreBtn.style.display = (itemsToShow.length < filteredItems.length) ? 'inline-block' : 'none';
+
+        this.langManager.updateLanguage();
+        this.applyMasonryLayout('#portfolio-grid-full');
+    }
+
+    applyMasonryLayout(gridSelector) {
+        const grid = document.querySelector(gridSelector);
+        if (!grid) return;
+
+        const items = grid.querySelectorAll('.portfolio-item-wrapper');
+        const rowHeight = 7;
+        const rowGap = 24;
+
+        items.forEach(item => {
+            const img = item.querySelector('img');
+            const setSpan = () => {
+                const contentHeight = item.querySelector('.portfolio-item').clientHeight;
+                const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight));
+                item.style.gridRowEnd = `span ${rowSpan}`;
+            };
+
+            if (img.complete) {
+                setSpan();
+            } else {
+                img.addEventListener('load', setSpan);
+            }
+        });
+    }
+
+    handleFilterClick(e) {
+        if (!e.target.matches('.filter-btn-new')) return;
+        document.querySelector('#portfolio-filters .active').classList.remove('active');
+        e.target.classList.add('active');
+        this.currentFilter = e.target.dataset.filter;
+        this.currentPage = 1;
+        this.renderPortfolioPageItems();
+    }
+
+    handleSearch(e) {
+        this.currentSearch = e.target.value;
+        this.currentPage = 1;
+        this.renderPortfolioPageItems();
+    }
+
+    handleLoadMore() {
+        this.currentPage++;
+        this.renderPortfolioPageItems();
+    }
+
+    openDesignModal(item) {
+        const modal = document.getElementById('design-modal-immersive');
+        const modalImagesContainer = document.getElementById('designModalImagesContainer');
+        if (!modal || !modalImagesContainer) return;
+
+        modalImagesContainer.innerHTML = item.galleryImages.map(imgSrc => {
+            const url = imgSrc instanceof Blob ? URL.createObjectURL(imgSrc) : imgSrc;
+            return `<div class="swiper-slide"><img src="${url}" class="img-fluid"></div>`;
+        }).join('');
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        if (this.swiperInstance) this.swiperInstance.destroy(true, true);
+        this.swiperInstance = new Swiper('.design-modal-carousel', {
+            loop: true,
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
+    }
+
+    closeDesignModal() {
+        const modal = document.getElementById('design-modal-immersive');
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
         }
     }
 
-    initDesignModal() {
-        const designModalEl = document.getElementById('designModal');
-        if (!designModalEl) return;
+    createPortfolioItemHTML(item, isHomePageGrid = false) {
+        const originalIndex = this.portfolioItems.findIndex(p => p.id === item.id);
+        const imageUrl = item.coverImage instanceof Blob ? URL.createObjectURL(item.coverImage) : item.coverImage;
 
-        const designModal = new bootstrap.Modal(designModalEl);
-        const modalImagesContainer = document.getElementById('designModalImagesContainer');
-        let modalSwiper;
+        let linksHtml = '';
+        if (item.type === 'project') {
+            linksHtml = `
+            <h4 data-en="${item.titleEn}" data-ar="${item.titleAr}">${item.titleEn}</h4>
+            <div class="portfolio-links">
+                <a href="${item.liveUrl}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                <a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            </div>`;
+        } else {
+            linksHtml = ` <div class="portfolio-links">
+            <button class="view-design-btn" data-index="${originalIndex}"><i class="fas fa-eye"></i></button></div>`;
+        }
 
-        document.body.addEventListener('click', (e) => {
-            if (e.target.closest('.view-design')) {
-                const button = e.target.closest('.view-design');
-                const index = parseInt(button.dataset.index);
-                const item = this.portfolioItems[index];
+        const wrapperClass = isHomePageGrid ? 'col-md-6 col-lg-6' : 'portfolio-item-wrapper';
 
-                if (item && item.galleryImages) {
-                    modalImagesContainer.innerHTML = item.galleryImages.map(imgBlob => {
-                        const url = imgBlob instanceof Blob ? URL.createObjectURL(imgBlob) : imgBlob;
-                        return `<div class="swiper-slide"><img src="${url}" class="img-fluid"></div>`;
-                    }).join('');
-                    
-                    designModal.show();
-
-                    if (modalSwiper) {
-                        modalSwiper.destroy(true, true);
-                    }
-                    
-                    modalSwiper = new Swiper('.design-modal-carousel', {
-                        loop: true,
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                    });
-                }
-            }
-        });
-    }
-}
-
-
-class Utils {
-    static debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func(...args), wait);
-        };
-    }
-
-    static throttle(func, limit) {
-        let inThrottle;
-        return function(...args) {
-            if (!inThrottle) {
-                func.apply(this, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
+        return `
+            <div class="${wrapperClass}">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="${imageUrl}" alt="${item.titleEn}" loading="lazy">
+                        <div class="portfolio-overlay">
+                        ${linksHtml}
+                        </div>
+                    </div>
+                </div>
+            </div>`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    new LanguageManager();
     new CertificateModal();
     new NavigationManager();
     new AnimationObserver();
     new PortfolioManager();
     document.body.classList.add('loaded');
-    
+
     const form = document.querySelector(".contact-form");
-    let currentErrors = {};
+    if (form) {
+        let currentErrors = {};
+        const errors = {
+            en: {
+                name: "Please enter your name.",
+                email: "Please enter a valid email.",
+                subject: "Please enter a subject.",
+                message: "Please enter your message."
+            },
+            ar: {
+                name: "من فضلك أدخل اسمك.",
+                email: "من فضلك أدخل بريد إلكتروني صحيح.",
+                subject: "من فضلك أدخل الموضوع.",
+                message: "من فضلك أدخل رسالتك."
+            }
+        };
 
-    const errors = {
-        en: {
-            name: "Please enter your name.",
-            email: "Please enter a valid email.",
-            subject: "Please enter a subject.",
-            message: "Please enter your message."
-        },
-        ar: {
-            name: "من فضلك أدخل اسمك.",
-            email: "من فضلك أدخل بريد إلكتروني صحيح.",
-            subject: "من فضلك أدخل الموضوع.",
-            message: "من فضلك أدخل رسالتك."
-        }
-    };
-
-    function validateForm() {
-        const lang = document.documentElement.lang || "en";
-        let valid = true;
-        currentErrors = {};
-
-        const successMsg = document.getElementById("success-msg");
-        if (successMsg) {
-            successMsg.textContent = "";
-            successMsg.style.display = "none";
-        }
-
-        document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
-
-        const nameField = document.querySelector("input[name='name']");
-        const emailField = document.querySelector("input[name='email']");
-        const subjectField = document.querySelector("input[name='subject']");
-        const messageField = document.querySelector("textarea[name='message']");
-
-        if (!nameField?.value.trim()) {
-            nameField?.nextElementSibling && (nameField.nextElementSibling.textContent = errors[lang].name);
-            currentErrors.name = "name";
-            valid = false;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailField?.value.trim() || !emailRegex.test(emailField.value)) {
-            emailField?.nextElementSibling && (emailField.nextElementSibling.textContent = errors[lang].email);
-            currentErrors.email = "email";
-            valid = false;
-        }
-
-        if (!subjectField?.value.trim()) {
-            subjectField?.nextElementSibling && (subjectField.nextElementSibling.textContent = errors[lang].subject);
-            currentErrors.subject = "subject";
-            valid = false;
-        }
-
-        if (!messageField?.value.trim()) {
-            messageField?.nextElementSibling && (messageField.nextElementSibling.textContent = errors[lang].message);
-            currentErrors.message = "message";
-            valid = false;
-        }
-
-        return valid;
-    }
-
-    form?.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (validateForm()) {
-            const name = document.querySelector("input[name='name']").value.trim();
-            const email = document.querySelector("input[name='email']").value.trim();
-            const subject = document.querySelector("input[name='subject']").value.trim();
-            const message = document.querySelector("textarea[name='message']").value.trim();
-
-            const phoneNumber = "201275844735";
-            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
-            const encodedMessage = encodeURIComponent(whatsappMessage);
+        const validateForm = () => {
+            const lang = document.documentElement.lang || "en";
+            let valid = true;
+            currentErrors = {};
 
             document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
-            currentErrors = {};
-            form.reset();
 
-            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
-        }
-    });
+            const nameField = form.querySelector("input[name='name']");
+            const emailField = form.querySelector("input[name='email']");
+            const subjectField = form.querySelector("input[name='subject']");
+            const messageField = form.querySelector("textarea[name='message']");
 
-    document.getElementById("lang-toggle")?.addEventListener("click", () => {
-        const lang = document.documentElement.lang;
-        for (const fieldName in currentErrors) {
-            const field = document.querySelector(`[name='${fieldName}']`);
-            if (field) {
-                field.nextElementSibling.textContent = errors[lang][currentErrors[fieldName]];
+            if (!nameField?.value.trim()) {
+                nameField?.nextElementSibling && (nameField.nextElementSibling.textContent = errors[lang].name);
+                valid = false;
             }
-        }
-        const successMsg = document.getElementById("success-msg");
-        if (successMsg?.style.display === "block") {
-            successMsg.textContent = lang === "ar"
-                ? "تم إرسال الرسالة بنجاح."
-                : "Message sent successfully.";
-            setTimeout(() => { successMsg.style.display = "none"; }, 5000);
-        }
-    });
-     const downloadCvButtons = document.querySelectorAll('.download-cv');
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailField?.value.trim() || !emailRegex.test(emailField.value)) {
+                emailField?.nextElementSibling && (emailField.nextElementSibling.textContent = errors[lang].email);
+                valid = false;
+            }
+
+            if (!subjectField?.value.trim()) {
+                subjectField?.nextElementSibling && (subjectField.nextElementSibling.textContent = errors[lang].subject);
+                valid = false;
+            }
+
+            if (!messageField?.value.trim()) {
+                messageField?.nextElementSibling && (messageField.nextElementSibling.textContent = errors[lang].message);
+                valid = false;
+            }
+
+            return valid;
+        };
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (validateForm()) {
+                const name = form.querySelector("input[name='name']").value.trim();
+                const email = form.querySelector("input[name='email']").value.trim();
+                const subject = form.querySelector("input[name='subject']").value.trim();
+                const message = form.querySelector("textarea[name='message']").value.trim();
+                const phoneNumber = "201275844735";
+                const whatsappMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+                form.reset();
+            }
+        });
+    }
+
+    const downloadCvButtons = document.querySelectorAll('.download-cv');
     downloadCvButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const filePath = this.getAttribute('data-file');
             if (filePath) {
                 const link = document.createElement('a');
                 link.href = filePath;
-                link.download = filePath.split('/').pop(); // Extracts filename from path
+                link.download = filePath.split('/').pop();
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
             }
         });
     });
-});
 
-document.addEventListener('visibilitychange', () => {
-    document.body.classList.toggle('paused', document.hidden);
-});
+    const skillsTab = document.querySelector('#skillsTab');
+    if (skillsTab) {
+        const animateSkillBars = (paneId) => {
+            const targetPane = document.querySelector(paneId);
+            if (!targetPane) return;
+            const skillBars = targetPane.querySelectorAll('.skill-bar');
+            gsap.set(skillBars, { width: '0%' });
+            skillBars.forEach(bar => {
+                const skillCard = bar.closest('.skill-card');
+                const skillLevel = skillCard.dataset.skill;
+                gsap.to(bar, {
+                    width: skillLevel + '%',
+                    duration: 1.2,
+                    ease: 'power3.out',
+                    delay: 0.2
+                });
+            });
+        };
 
-window.addEventListener('load', () => {
-    const loadTime = performance.now();
-    console.log(`Page loaded in ${Math.round(loadTime)}ms`);
+        skillsTab.addEventListener('shown.bs.tab', event => {
+            const newPaneId = event.target.getAttribute('data-bs-target');
+            animateSkillBars(newPaneId);
+        });
+
+        const initialActiveTab = skillsTab.querySelector('.nav-link.active');
+        if (initialActiveTab) {
+            const initialPaneId = initialActiveTab.getAttribute('data-bs-target');
+            setTimeout(() => {
+                animateSkillBars(initialPaneId);
+            }, 300);
+        }
+    }
 });

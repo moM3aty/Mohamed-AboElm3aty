@@ -151,27 +151,13 @@ class AnimationsManager {
                 opacity: 0,
                 ease: 'power2.out'
             });
-
-            const skillBar = card.querySelector('.skill-bar');
-            const skillLevel = card.getAttribute('data-skill');
-            
-            if (skillBar) {
-                gsap.to(skillBar, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 70%'
-                    },
-                    width: skillLevel + '%',
-                    duration: 1.5,
-                    delay: 0.5,
-                    ease: 'power2.out'
-                });
-            }
+            // The logic for animating the skill-bar itself has been moved to script.js
+            // to be triggered by tab clicks, so we remove it from here.
         });
     }
 
     portfolioAnimations() {
-        // This will be called from script.js after items are rendered
+        // This function can be used later if needed
     }
 
     contactAnimations() {
@@ -245,11 +231,11 @@ class AnimationsManager {
     }
 
     mouseFollowAnimations() {
-        // This animation can run on all pages
+        // This can be expanded later if needed
     }
 
     initButtonAnimations() {
-        // This animation can run on all pages
+        // This can be expanded later if needed
     }
     
     initPageTransitions() {

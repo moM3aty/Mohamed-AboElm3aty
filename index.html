@@ -189,7 +189,7 @@
                         <button class="nav-link" id="backend-tab" data-bs-toggle="tab" data-bs-target="#backend" type="button" role="tab" data-ar="تطوير الواجهات الخلفية" data-en="Backend Development">Backend Development</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="cloud-tab" data-bs-toggle="tab" data-bs-target="#cloud" type="button" role="tab" data-ar="تكنولوجيا المعلومات والبنية التحتية" data-en="IT & Infrastructure">IT & Infrastructure</button>
+                        <button class="nav-link" id="cloud-tab" data-bs-toggle="tab" data-bs-target="#cloud" type="button" role="tab" data-ar="تكنولوجيا المعلومات " data-en="IT & Infrastructure">IT & Infrastructure</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="version-tab" data-bs-toggle="tab" data-bs-target="#version" type="button" role="tab" data-ar="السحابة والتحكم بالإصدار" data-en="Cloud & Version Control">Cloud & Version Control</button>
@@ -559,46 +559,25 @@
         </div>
     </section>
 
-    <section id="portfolio" class="section-padding portfolio">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title" data-en="Featured Projects" data-ar="المشاريع المميزة">Featured Projects</h2>
-                <p class="section-subtitle" data-en="Some of my recent work" data-ar="بعض أعمالي الحديثة">Some of my recent work</p>
-            </div>
-            <ul class="nav nav-tabs d-flex justify-content-center" id="projectsTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="project-tab" data-bs-toggle="tab" data-bs-target="#project" type="button" role="tab" data-ar="المشاريع" data-en="Projects">Projects</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="designs-tab" data-bs-toggle="tab" data-bs-target="#designs" type="button" role="tab" data-ar="التصميمات" data-en="Designs">Designs</button>
-                </li>
-            </ul>
-    
-            <div class="tab-content" id="projectsTabContent">
-                <div class="tab-pane fade show active" id="project" role="tabpanel">
-                    <div class="row g-4 mt-4" id="portfolio-projects-grid">
-                        <!-- Projects will be dynamically inserted here -->
-                    </div>
-                    <div class="col-12 mt-5 text-center">
-                        <a href="portfolio.html" class="btn btn-primary btn-lg" data-ar="عرض كل المشاريع" data-en="View All Projects">View All Projects</a>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="designs" role="tabpanel">
-                    <div class="swiper-container designs-carousel mt-5">
-                        <div class="swiper-wrapper" id="portfolio-designs-grid">
-                            <!-- Designs will be dynamically inserted here as swiper-slides -->
-                        </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div class="col-12 mt-5 text-center">
-                        <a href="portfolio.html" class="btn btn-primary btn-lg" data-ar="عرض كل التصاميم" data-en="View All Designs">View All Designs</a>
-                    </div>
-                </div>
-            </div>
+<section id="portfolio" class="section-padding portfolio">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title" data-en="Featured Work" data-ar="أعمال مميزة">Featured Work</h2>
+            <p class="section-subtitle" data-en="A selection of my best projects and designs" data-ar="مختارات من أفضل مشاريعي وتصميماتي">A selection of my best projects and designs</p>
         </div>
-    </section>
+        
+        <!-- Unified Grid for Homepage -->
+        <div class="row g-4" id="portfolio-grid-home">
+            <!-- 6 Featured items will be dynamically inserted here -->
+        </div>
+
+        <div class="col-12 mt-5 text-center">
+            <a href="portfolio.html" class="btn btn-primary btn-lg" data-ar="عرض كل الأعمال" data-en="View All Work">View All Work</a>
+        </div>
+    </div>
+</section>
+
+
     
     <section id="resume" class="section-padding resume">
         <div class="container">
@@ -896,6 +875,14 @@
             </div>
         </div>
     </div>
+    <div class="fullscreen-modal" id="design-modal-immersive">
+    <button class="modal-close-btn" id="modal-close-btn-immersive">&times;</button>
+    <div class="swiper-container design-modal-carousel">
+        <div class="swiper-wrapper" id="designModalImagesContainer"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>  
     <div class="modal fade" id="designModal" tabindex="-1" aria-labelledby="designModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
