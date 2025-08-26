@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Portfolio - Mohamed Aboelmaaty" data-ar="محمد ابو المعاطي - ملف اعمالي">Portfolio - Mohamed Aboelmaaty</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+</head>
+<body>
+    
+    <div id="animated-bg">
+        <canvas id="network-canvas"></canvas>
+    </div>
+
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-text" data-ar="محمد أبوالـمعاطي" data-en="Mohamed Aboelmaaty">Mohamed Aboelmaaty</span>
+            </a>
+            
+            <div class="navbar-controls d-flex align-items-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-column gap-3 flex-xl-row mt-3 mt-xl-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-en="About" data-ar="حولي">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certifications" data-en="Certificates" data-ar="الشهادات">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio" data-en="Portfolio" data-ar="أعمالي">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume" data-en="Resume" data-ar="السيرة الذاتية">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-primary btn-sm ms-4 ms-xl-0 mt-3 mt-xl-0" id="lang-toggle">
+                    <i class="fas fa-language"></i>
+                    <span id="lang-text">AR</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span data-en="Building Digital" data-ar="بناء تجارب">Building Digital</span>
+                            <span data-en="Experiences That" data-ar="رقمية تترك">Experiences That</span>
+                            <span class="text-gradient" data-en="Make an Impact" data-ar="أثراً مميزاً">Make an Impact</span>
+                        </h1>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">3+</div>
+                                <div class="stat-label" data-en="YEARS EXPERIENCE" data-ar="سنوات خبرة">YEARS EXPERIENCE</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label" data-en="PROJECTS COMPLETED" data-ar="مشاريع مكتملة">PROJECTS COMPLETED</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label" data-en="CLIENT SATISFACTION" data-ar="رضا العملاء">CLIENT SATISFACTION</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn btn-primary btn-lg">
+                                <span data-en="View My Work" data-ar="عرض أعمالي">View My Work</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="assets/resume.pdf" class="btn btn-outline-light btn-lg" download>
+                                <span data-en="Download Resume" data-ar="تحميل السيرة الذاتية">Download Resume</span>
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="assets/profile.jpg" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/400x400/0A0A23/FFFFFF?text=Profile';">
+                            <div class="status-badge">
+                                <span data-en="Available for Work" data-ar="متاح للعمل">Available for Work</span>
+                            </div>
+                            <div class="role-badge">
+                                <span data-en="Software Engineer" data-ar="مهندس برمجيات">Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="About Me" data-ar="نبذة عني">About Me</h2>
+                <p class="section-subtitle" data-en="Get to know me better" data-ar="تعرف علي أكثر">Get to know me better</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-content">
+                        <h3 data-en="Full-Stack Developer & IT Specialist & Photoshop Designer" data-ar="مطور ويب متكامل وأخصائي تكنولوجيا المعلومات ومصمم فوتوشوب">Full-Stack Developer & IT Specialist & Photoshop Designer</h3>
+                        <p class="m-0" data-en="With over 3 years of experience in creating digital experiences that make a real impact, I specialize in modern web technologies and love bringing ideas to life through clean, efficient code." data-ar="لدي خبرة تزيد عن 3 سنوات في إنشاء تجارب رقمية تترك أثرًا حقيقيًا، وأنا متخصص في تقنيات الويب الحديثة وأحب تحويل الأفكار إلى واقع من خلال كود نظيف وفعال."></p>
+                        <p class="m-0" data-en="A results-driven IT professional with a multidisciplinary background, transitioning from IT infrastructure management to Full-Stack Web Development." data-ar="محترف تكنولوجيا معلومات ذو خلفية متعددة التخصصات، أنتقل حاليًا من إدارة البنية التحتية لتكنولوجيا المعلومات إلى تطوير الويب المتكامل."></p>
+                        <p class="m-0" data-en="With proven experience in maintaining secure, high-performance IT environments for diverse clients like Arab Downtown and Dolphin for garments." data-ar="لدي خبرة مثبتة في الحفاظ على بيئات تكنولوجيا معلومات آمنة وعالية الأداء لعملاء متنوعين مثل أراب داون تاون ودولفين للملابس."></p>
+                        <p class="m-0" data-en="Now I combine my deep technical expertise with advanced development skills in ASP.NET and Angular to deliver robust, efficient, and compelling digital solutions." data-ar="أدمج الآن خبرتي التقنية العميقة مع مهارات التطوير المتقدمة في ASP.NET و Angular لتقديم حلول رقمية قوية وفعالة وجذابة."></p>
+                        <div class="row g-4 about-cards justify-content-center align-items-center mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card h-100">
+                                    <div class="icon">
+                                        <i class="fas fa-city"></i> 
+                                    </div>
+                                    <h4 class="h6" data-ar="المدينة: القاهرة، مصر" data-en="City: Cairo, Egypt">City: Cairo, Egypt</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card h-100">
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h4 class="h6" data-ar="البريد الإلكتروني: mo.m3aty@outlook.com" data-en="Email: mo.m3aty@outlook.com">Email: mo.m3aty@outlook.com</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card h-100">
+                                    <div class="icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <h4 class="h6" data-ar="الهاتف: +201275844735" data-en="Phone: +201275844735">Phone: +20 127 584-4735</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card h-100">
+                                    <div class="icon">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h4 class="h6" data-en="Military Service: Completed" data-ar="الخدمة العسكرية: تمت تأديتها">Military Service: Completed</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="Skills & Technologies" data-ar="المهارات والتقنيات">Skills & Technologies</h2>
+                <p class="section-subtitle" data-en="Technologies I work with" data-ar="التقنيات التي أعمل بها">Technologies I work with</p>
+            </div>
+                <ul class="nav nav-tabs d-flex flex-wrap gap-3 justify-content-center align-items-center" id="skillsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="frontend-tab" data-bs-toggle="tab" data-bs-target="#frontend" type="button" role="tab" data-ar="تطوير الواجهات الأمامية" data-en="Frontend Development">Frontend Development</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="backend-tab" data-bs-toggle="tab" data-bs-target="#backend" type="button" role="tab" data-ar="تطوير الواجهات الخلفية" data-en="Backend Development">Backend Development</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cloud-tab" data-bs-toggle="tab" data-bs-target="#cloud" type="button" role="tab" data-ar="تكنولوجيا المعلومات والبنية التحتية" data-en="IT & Infrastructure">IT & Infrastructure</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="version-tab" data-bs-toggle="tab" data-bs-target="#version" type="button" role="tab" data-ar="السحابة والتحكم بالإصدار" data-en="Cloud & Version Control">Cloud & Version Control</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab" data-ar="التصميم" data-en="Design">Design</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="office-tab" data-bs-toggle="tab" data-bs-target="#office" type="button" role="tab" data-ar="مجموعة أوفيس" data-en="Office Suite">Office Suite</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="skill-tab" data-bs-toggle="tab" data-bs-target="#skill" type="button" role="tab" data-ar="المهارات الشخصية" data-en="Soft Skills">Soft Skills</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="skillsTabContent">
+                    <div class="tab-pane fade show active" id="frontend" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="90">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" style="height:40px;">
+                                    </div>
+                                    <h4>HTML5</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 90%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="85">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS3" style=" height:40px;">
+                                    </div>
+                                    <h4> CSS3</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 85%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="85">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" style=" height:40px;">
+                                    </div>
+                                    <h4> JavaScript</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 85%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="85">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" style="height:40px;">
+                                    </div>
+                                    <h4> TypeScript</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 85%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="85">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular" style="height:40px;">
+                                    </div>
+                                    <h4> Angular</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 85%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="85">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap" style="height:40px;">
+                                    </div>
+                                    <h4> Bootstrap</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 85%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="backend" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="88">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" style="width:80px; height:80px;">
+                                    </div>
+                                    <h4>C#</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 88%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="92">
+                                    <div class="skill-icon">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/875/875209.png" alt="OOP" style="height:40px;">
+                                    </div>
+                                    <h4>OOP</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 92%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="92">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg" alt=".NET Logo" style=" height:40px;">
+                                    </div>
+                                    <h4>ASP.NET MVC & Core</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 92%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="92">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="MS SQL Server Logo" style="height:40px;">
+                                    </div>
+                                    <h4>MS SQL Server</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 92%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="92">
+                                    <div class="skill-icon">
+                                        <img src="assets/entity.png" alt="Entity Framework Core" style="width:80px; height:80px;" onerror="this.onerror=null;this.src='https://placehold.co/80x80/1A1A3E/FFFFFF?text=EF';">
+                                    </div>
+                                    <h4>Entity Framework</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 92%;"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="92">
+                                    <div class="skill-icon">
+                                        <img src="assets/api.png" alt="API" style="height:80px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=API';">
+                                    </div>
+                                    <h4>API</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 92%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cloud" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/windows.webp" alt="Windows Server" style="width:120px; height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=Win';">
+                                    </div>
+                                    <h4>Windows Server</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="87">
+                                    <div class="skill-icon">
+                                        <img src="assets/vmware.webp" alt="VMware" style="width:120px; height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=VM';">
+                                    </div>
+                                    <h4>VMware ESXi</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 87%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="87">
+                                    <div class="skill-icon">
+                                        <img src="assets/ccna.png" alt="CCNA" style="width:120px; height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=CCNA';">
+                                    </div>
+                                    <h4>CCNA/Networking</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 87%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="87">
+                                    <div class="skill-icon">
+                                        <img src="assets/sophos.png" alt="Sophos" style="width:120px; height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=Sophos';">
+                                    </div>
+                                    <h4>Sophos Firewall</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 87%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="version" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure" style="width:100px; height:100px;">
+                                    </div>
+                                    <h4>Microsoft Azure</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="87">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git/GitHub" style=" height:100px;">
+                                    </div>
+                                    <h4>Git/GitHub</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 87%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="design" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" style=" height:40px;">
+                                    </div>
+                                    <h4>Adobe Photoshop</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="office" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/word.png" alt="Microsoft Word" style="width:70px; height:70px;" onerror="this.onerror=null;this.src='https://placehold.co/70x70/1A1A3E/FFFFFF?text=Word';">
+                                    </div>
+                                    <h4>Microsoft Word</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/excel.png" alt="Microsoft Excel" style="width:70px; height:70px;" onerror="this.onerror=null;this.src='https://placehold.co/70x70/1A1A3E/FFFFFF?text=Excel';">
+                                    </div>
+                                    <h4>Microsoft Excel</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/powerpoint.svg" alt="Microsoft PowerPoint" style="width:70px; height:70px;" onerror="this.onerror=null;this.src='https://placehold.co/70x70/1A1A3E/FFFFFF?text=PPT';">
+                                    </div>
+                                    <h4>Microsoft PowerPoint</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="skill" role="tabpanel">
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/leadership.png" alt="Leadership" style="height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/70x70/1A1A3E/FFFFFF?text=Lead';">
+                                    </div>
+                                    <h4>Team Leadership</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="skill-card h-100" data-skill="80">
+                                    <div class="skill-icon">
+                                        <img src="assets/volunteer.png" alt="Volunteering" style="width:120px; height:120px;" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1A1A3E/FFFFFF?text=Volunteer';">
+                                    </div>
+                                    <h4>Volunteering</h4>
+                                    <div class="skill-progress"><div class="skill-bar" style="--skill-width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="Certifications" data-ar="الشهادات">Certifications</h2>
+                <p class="section-subtitle" data-en="Professional achievements and learning milestones" data-ar="الإنجازات المهنية ومعالم التعلم">Professional achievements and learning milestones</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/iti.png" alt="ITI" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=ITI';">
+                        </div>
+                        <h4 data-en="Intensive Program - Full Stack .Net" data-ar="برنامج مكثف - Full Stack .Net">Intensive Program - Full Stack .Net</h4>
+                        <p class="cert-issuer" data-en="ITI" data-ar="ITI">ITI</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert1">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/meta.png" alt="Meta" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=Meta';">
+                        </div>
+                        <h4 data-en="Programming with JavaScript" data-ar="البرمجة باستخدام JavaScript">Programming with JavaScript</h4>
+                        <p class="cert-issuer" data-en="Meta (Coursera)" data-ar="Meta (Coursera)">Meta (Coursera)</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert2">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/portegy.png" alt="Portegy" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=Portegy';">
+                        </div>
+                        <h4 data-en="CCNA 200-301" data-ar="شهادة CCNA 200-301">CCNA 200-301</h4>
+                        <p class="cert-issuer" data-en="Portegy" data-ar="Portegy">Portegy</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert3">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/portegy.png" alt="Portegy" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=Portegy';">
+                        </div>
+                        <h4 data-en="MCSA 2016" data-ar="شهادة MCSA 2016">MCSA 2016</h4>
+                        <p class="cert-issuer" data-en="Portegy" data-ar="Portegy">Portegy</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert4">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/iti.png" alt="ITI" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=ITI';">
+                        </div>
+                        <h4 data-en="Summer Trainee - ASP.NET MVC" data-ar="تدريب صيفي - ASP.NET MVC">Summer Trainee - ASP.NET MVC</h4>
+                        <p class="cert-issuer" data-en="ITI" data-ar="ITI">ITI</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert5">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/university.png" alt="University" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=PSU';">
+                        </div>
+                        <h4 data-en="Bachelor of Science in Computer Science" data-ar="بكالوريوس علوم الحاسب">Bachelor of Science in Computer Science</h4>
+                        <p class="cert-issuer" data-en="Port Said University" data-ar="Port Said University">Port Said University</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert6">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-logo">
+                            <img src="https://portfolio-three-amber-45.vercel.app/images/Certificates/life%20Maker.png" alt="Life Makers" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFFFFF/000000?text=LMF';">
+                        </div>
+                        <h4 data-en="Thanks and Appreciation" data-ar="شكر وتقدير">Thanks and Appreciation</h4>
+                        <p class="cert-issuer" data-en="Life Makers Foundation" data-ar="Life Makers Foundation">Life Makers Foundation</p>
+                        <button class="btn btn-primary btn-sm view-cert" data-cert="cert7">
+                            <span data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding portfolio">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="Featured Projects" data-ar="المشاريع المميزة">Featured Projects</h2>
+                <p class="section-subtitle" data-en="Some of my recent work" data-ar="بعض أعمالي الحديثة">Some of my recent work</p>
+            </div>
+            <ul class="nav nav-tabs d-flex justify-content-center" id="projectsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="project-tab" data-bs-toggle="tab" data-bs-target="#project" type="button" role="tab" data-ar="المشاريع" data-en="Projects">Projects</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="designs-tab" data-bs-toggle="tab" data-bs-target="#designs" type="button" role="tab" data-ar="التصميمات" data-en="Designs">Designs</button>
+                </li>
+            </ul>
+    
+            <div class="tab-content" id="projectsTabContent">
+                <div class="tab-pane fade show active" id="project" role="tabpanel">
+                    <div class="row g-4 mt-4" id="portfolio-projects-grid">
+                        <!-- Projects will be dynamically inserted here -->
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        <a href="portfolio.html" class="btn btn-primary btn-lg" data-ar="عرض كل المشاريع" data-en="View All Projects">View All Projects</a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="designs" role="tabpanel">
+                    <div class="swiper-container designs-carousel mt-5">
+                        <div class="swiper-wrapper" id="portfolio-designs-grid">
+                            <!-- Designs will be dynamically inserted here as swiper-slides -->
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        <a href="portfolio.html" class="btn btn-primary btn-lg" data-ar="عرض كل التصاميم" data-en="View All Designs">View All Designs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="resume" class="section-padding resume">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="My Resume" data-ar="سيرتي الذاتية">My Resume</h2>
+                <p class="section-subtitle" data-en="Download my complete CV" data-ar="حمل سيرتي الذاتية الكاملة">Download my complete CV</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-user"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-ar="أخصائي تكنولوجيا معلومات" data-en="IT Specialist">IT Specialist</h5>
+                            <span class="date-badge" data-en="May 2025 – Present" data-ar="مايو 2025 - الآن">May 2025 – Present</span>
+                        </div>
+                        <p data-ar="الوكالة المصرية الدولية للملاحة (دوام كامل)" data-en="Egyptian Int. Shipping Agencies (Full-time)"><em>Egyptian Int. Shipping Agencies (Full-time)</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-ar="مطور ويب" data-en="Web Developer">Web Developer</h5>
+                            <span class="date-badge" data-ar="فبراير 2025 - الآن" data-en="Feb 2025 – Present">Feb 2025 – Present</span>
+                        </div>
+                        <p data-ar="شركة GMT (عن بعد، دوام جزئي)" data-en="GMT (Remote, Part-time)"><em>GMT (Remote, Part-time)</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-en="Career Progression at Portegy (Part-time)" data-ar="التدرج الوظيفي في شركة بورتيجي (دوام جزئي)">Career Progression at Portegy (Part-time)</h5>
+                            <span class="date-badge" data-ar="نوفمبر 2023 - الآن" data-en="Nov 2023 – Present">Nov 2023 – Present</span>
+                        </div>
+                        <ul class="d-flex flex-column gap-3">
+                            <li data-ar="مسؤول تكنولوجيا المعلومات: إدارة وصيانة البنية التحتية لتكنولوجيا المعلومات." data-en="IT Administrator: Managing and maintaining IT infrastructure."><b>IT Administrator:</b> Managing and maintaining IT infrastructure.</li>
+                            <li data-ar="مطور ويب: بناء أدوات داخلية وواجهات برمجية." data-en="Web Developer: Building internal tools and APIs."><b>Web Developer:</b> Building internal tools and APIs.</li>
+                            <li data-ar="أخصائي تكنولوجيا معلومات: تقديم حلول تقنية متقدمة." data-en="IT Specialist: Providing advanced technical solutions."><b>IT Specialist:</b> Providing advanced technical solutions.</li>
+                            <li data-ar="دعم فني: تقديم المستوى الأول من الدعم للمستخدمين والأنظمة." data-en="IT Help-desk: First-level user and system support."><b>IT Help-desk:</b> First-level user and system support.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-ar="شركة Soft-Tech (عن بعد)" data-en="Soft-Tech Company (Remote)">Soft-Tech Company (Remote)</h5>
+                            <span class="date-badge" data-ar="مايو 2024 - نوفمبر 2024" data-en="May 2024 - Nov 2024">May 2024 - Nov 2024</span>
+                        </div>
+                        <ul class="d-flex flex-column gap-3">
+                            <li data-ar="ترجمة تصميمات Figma UI/UX لمشروع 'بوابة الاستثمار'" data-en="Translated Figma UI/UX designs for the 'Investment Portal' project.">Translated Figma UI/UX designs for the "Investment Portal" project.</li>
+                            <li data-ar="تطوير واجهة المستخدم للتطبيق باستخدام Angular و TypeScript." data-en="Developed the user interface using Angular and TypeScript.">Developed the user interface using Angular and TypeScript.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-user-ninja"></i></div>
+                    <div class="timeline-content">
+                        <h5 class="fw-bold mb-4" data-ar="مطور واجهات أمامية" data-en="Front-End Developer">Front-End Developer</h5>
+                        <p data-ar="عملت على مشاريع Angular مع التركيز على واجهة المستخدم المستجيبة." data-en="Worked on Angular projects with a focus on responsive UI."><em>Worked on Angular projects with a focus on responsive UI.</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-headset"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 data-ar="دعم فني (مراجعة)" data-en="Technical Support (Audit)" class="fw-bold mb-4">Technical Support (Audit)</h5>
+                            <span class="date-badge" data-ar="ديسمبر 2021 - ديسمبر 2022" data-en="Dec 2021 - Dec 2022">Dec 2021 - Dec 2022</span>
+                        </div>
+                        <p data-ar="شركة XTeam" data-en="XTeam Company"><em>XTeam Company</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-ar="بكالوريوس علوم الحاسب وتكنولوجيا المعلومات" data-en="Bachelor of Science in Computer Science & IT">Bachelor of Science in Computer Science & IT</h5>
+                            <span class="date-badge" data-ar="تخرج: 2022" data-en="Graduated: 2022">Graduated: 2022</span>
+                        </div>
+                        <p data-ar="جامعة بورسعيد (التقدير: جيد جداً)" data-en="Port Said University (Grade: B+)" class="text-white-50"><em>Port Said University (Grade: B+)</em></p>
+                        <ul>
+                            <li data-ar="مشروع التخرج (التقدير: امتياز): نظام ويب مرن وعالي الأداء لقائمة طعام مطعم." data-en="Graduation Project (Grade: A+): Website System for a flexible and high-performance Restaurant Menu.">Graduation Project (Grade: A+): Website System for a flexible and high-performance Restaurant Menu.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-4" data-ar="معسكر تدريب مكثف (Full-Stack .NET)" data-en="Intensive Code Camp (Full-Stack .NET)">Intensive Code Camp (Full-Stack .NET)</h5>
+                            <span class="date-badge" data-ar="يناير 2024 - أبريل 2024" data-en="Jan 2024 - Apr 2024">Jan 2024 - Apr 2024</span>
+                        </div>
+                        <p class="" data-ar="معهد تكنولوجيا المعلومات (ITI)" data-en="Information Technology Institute (ITI)"><em>Information Technology Institute (ITI)</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 data-ar="متدرب صيفي ASP.NET MVC" data-en="ASP.NET MVC Summer Trainee" class="fw-bold mb-4">ASP.NET MVC Summer Trainee</h5>
+                             <span class="date-badge" data-ar="يوليو 2021 - أغسطس 2021" data-en="Jul 2021 - Aug 2021">Jul 2021 - Aug 2021</span>
+                        </div>
+                        <p class="" data-ar="معهد تكنولوجيا المعلومات (ITI)" data-en="Information Technology Institute (ITI)"><em>Information Technology Institute (ITI)</em></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                    <div class="timeline-content">
+                        <h5 class="fw-bold mb-4 mb-4" data-ar="دورات تدريبية هامة" data-en="Key Courses">Key Courses</h5>
+                        <ul class="d-flex flex-column gap-3">
+                            <li data-ar="مقدمة في علوم الحاسب (CS50) - جامعة هارفارد." data-en="CS50's Introduction to Computer Science- Harvard University."> <b>CS50's Introduction to Computer Science</b> - Harvard University.</li>
+                            <li data-ar="البرمجة باستخدام JavaScript - شركة ميتا (عبر كورسيرا)." data-en="Programming with JavaScript- Meta (via Coursera)."> <b>Programming with JavaScript</b> - Meta (via Coursera).</li>
+                            <li data-ar="أنماط الشخصية MBTI - مؤسسة صناع الحياة." data-en="MBTI Personality Types- Life Makers Port Said."> <b>MBTI Personality Types</b> - Life Makers Port Said.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-4">
+                <button class="btn btn-primary btn-lg download-cv" data-file="assets/cv/CV-M-AboElmaaty-IT.pdf">
+                    <i class="fas fa-download"></i>
+                    <span data-en="IT CV" data-ar="تحميل السيرة الذاتية (IT)">IT CV</span>
+                </button>
+                <button class="btn btn-primary btn-lg download-cv" data-file="assets/cv/CV-M-AboElmaaty-Developer.pdf">
+                    <i class="fas fa-download"></i>
+                    <span data-en="Develoer CV" data-ar="تحميل السيرة الذاتية (مطور)">Develoer CV</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+                <p class="section-subtitle" data-en="Let's discuss your next project" data-ar="لنناقش مشروعك القادم">Let's discuss your next project</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="contact-wrapper-new">
+                        <div class="contact-info-side">
+                            <h3 class="contact-info-title" data-en="Contact Information" data-ar="معلومات التواصل">Contact Information</h3>
+                            <p class="contact-info-subtitle" data-en="Feel free to reach out to me anytime!" data-ar="لا تتردد في التواصل معي في أي وقت!">Feel free to reach out to me anytime!</p>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                                <div class="contact-info-text">
+                                    <span data-en="Phone" data-ar="الهاتف">Phone</span>
+                                    <a href="tel:+201275844735">+201275844735</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-info-text">
+                                    <span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+                                    <a href="mailto:mo.m3aty@outlook.com">mo.m3aty@outlook.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-info-text">
+                                    <span data-en="Location" data-ar="الموقع">Location</span>
+                                    <p data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-social-links">
+                                <a href="https://www.linkedin.com/in/mohamed-abo-elmaaty/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/moM3aty" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.facebook.com/mo.m3aty/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="https://wa.me/201275844735" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-side">
+                            <form class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder=" " data-en-placeholder="Your Name" data-ar-placeholder="اسمك" id="form-name">
+                                            <label for="form-name" data-en="Your Name" data-ar="اسمك">Your Name</label>
+                                            <p class="error-msg text-danger small mb-0"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder=" " data-en-placeholder="Your Email" data-ar-placeholder="بريدك الإلكتروني" id="form-email">
+                                            <label for="form-email" data-en="Your Email" data-ar="بريدك الإلكتروني">Your Email</label>
+                                            <p class="error-msg text-danger small mb-0"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" placeholder=" " data-en-placeholder="Subject" data-ar-placeholder="الموضوع" id="form-subject">
+                                    <label for="form-subject" data-en="Subject" data-ar="الموضوع">Subject</label>
+                                    <p class="error-msg text-danger small mb-0"></p>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" name="message" placeholder=" " data-en-placeholder="Your Message" data-ar-placeholder="رسالتك" id="form-message"></textarea>
+                                    <label for="form-message" data-en="Your Message" data-ar="رسالتك">Your Message</label>
+                                    <p class="error-msg text-danger small mb-0"></p>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                <div class="text-center mb-3 mt-2">
+                                    <p id="success-msg" class="text-success fw-bold"></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-main">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 footer-col">
+                        <a class="footer-brand" href="#home">
+                            <span class="brand-text" data-ar="محمد أبوالـمعاطي" data-en="Mohamed Aboelmaaty">Mohamed Aboelmaaty</span>
+                        </a>
+                        <p class="footer-about" data-en="A passionate Full-Stack Developer creating modern and responsive web applications." data-ar="مطور ويب متكامل شغوف بإنشاء تطبيقات ويب حديثة ومتجاوبة.">
+                            A passionate Full-Stack Developer creating modern and responsive web applications.
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 footer-col">
+                        <h5 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h5>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#about" data-en="About" data-ar="حولي">About</a></li>
+                            <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
+                            <li><a href="#portfolio" data-en="Portfolio" data-ar="أعمالي">Portfolio</a></li>
+                            <li><a href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 footer-col">
+                        <h5 data-en="Contact" data-ar="تواصل">Contact</h5>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="mailto:mo.m3aty@outlook.com"><i class="fas fa-envelope me-2"></i>mo.m3aty@outlook.com</a></li>
+                            <li><a href="tel:+201275844735"><i class="fas fa-phone me-2"></i>01275844735</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 footer-col">
+                        <h5 data-en="Follow Me" data-ar="تابعني">Follow Me</h5>
+                        <div class="footer-social-links">
+                            <a href="https://www.linkedin.com/in/mohamed-abo-elmaaty/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/moM3aty" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/mo.m3aty/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://wa.me/201275844735" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright" data-en="© 2024 Mohamed Aboelmaaty. All Rights Reserved." data-ar="© 2024 محمد أبوالـمعاطي. جميع الحقوق محفوظة.">
+                    © 2024 Mohamed Aboelmaaty. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+        <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+    <div class="modal fade " id="certificateModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-en="Certificate" data-ar="الشهادة">Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="cert-viewer">
+                        <div class="cert-controls">
+                            <button class="btn btn-sm btn-outline-primary" id="zoom-in">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary" id="zoom-out">
+                                <i class="fas fa-search-minus"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" id="download-cert">
+                                <i class="fas fa-download"></i>
+                                <span data-en="Download" data-ar="تحميل">Download</span>
+                            </button>
+                        </div>
+                        <div class="cert-image-container">
+                            <img id="cert-image" src="" alt="Certificate" class="cert-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="designModal" tabindex="-1" aria-labelledby="designModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="designModalLabel">Design Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="swiper-container design-modal-carousel">
+                        <div class="swiper-wrapper" id="designModalImagesContainer">
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

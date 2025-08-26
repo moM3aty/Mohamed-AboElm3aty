@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Admin Panel" data-ar="لوحة التحكم">Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="animated-bg">
+        <canvas id="network-canvas"></canvas>
+    </div>
+    <div class="container admin-container my-5">
+        <header class="admin-header d-flex justify-content-between align-items-center mb-5">
+            <h1 data-en="Admin Panel" data-ar="لوحة التحكم" class="text-gradient">Admin Panel</h1>
+            <button id="logout-btn" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt me-2"></i>
+                <span data-en="Logout" data-ar="تسجيل الخروج">Logout</span>
+            </button>
+        </header>
+
+        <div class="row g-5">
+            <!-- Add New Item Section -->
+            <div class="col-lg-5">
+                <div class="admin-card add-item-card">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4" data-en="Add New Item" data-ar="إضافة عنصر جديد">Add New Item</h2>
+                        <form id="add-item-form">
+                            <div class="form-group">
+                                <label for="item-type" class="form-label" data-en="Item Type" data-ar="نوع العنصر">Item Type</label>
+                                <select class="form-select" id="item-type">
+                                    <option value="project" data-en="Project" data-ar="مشروع">Project</option>
+                                    <option value="design" data-en="Design" data-ar="تصميم">Design</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="item-title-en" class="form-label" data-en="Title (English)" data-ar="العنوان (الإنجليزية)">Title (English)</label>
+                                <input type="text" class="form-control" id="item-title-en" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="item-title-ar" class="form-label" data-en="Title (Arabic)" data-ar="العنوان (العربية)">Title (Arabic)</label>
+                                <input type="text" class="form-control" id="item-title-ar" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="item-image" class="form-label" data-en="Cover Image" data-ar="صورة الغلاف">Cover Image</label>
+                                <input type="file" class="form-control" id="item-image" accept="image/*" required>
+                            </div>
+                            
+                            <div id="project-fields">
+                                <div class="form-group">
+                                    <label for="item-live-url" class="form-label" data-en="Live URL" data-ar="الرابط المباشر">Live URL</label>
+                                    <input type="url" class="form-control" id="item-live-url">
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-github-url" class="form-label" data-en="GitHub URL" data-ar="رابط GitHub">GitHub URL</label>
+                                    <input type="url" class="form-control" id="item-github-url">
+                                </div>
+                            </div>
+
+                            <div id="design-fields" style="display: none;">
+                                 <div class="form-group">
+                                    <label for="item-gallery-images" class="form-label" data-en="Gallery Images (Multiple)" data-ar="صور المعرض (متعدد)">Gallery Images (Multiple)</label>
+                                    <input type="file" class="form-control" id="item-gallery-images" accept="image/*" multiple>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mt-3">
+                                <i class="fas fa-plus-circle me-2"></i>
+                                <span data-en="Add Item" data-ar="إضافة العنصر">Add Item</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Items Section -->
+            <div class="col-lg-7">
+                <div class="admin-card manage-items-card">
+                     <div class="card-body">
+                        <h2 class="card-title mb-4" data-en="Manage Items" data-ar="إدارة العناصر">Manage Items</h2>
+                        <!-- Search Input -->
+                        <div class="form-group mb-4">
+                            <input type="text" id="search-input" class="form-control" placeholder="Search by title..." data-en-placeholder="Search by title..." data-ar-placeholder="ابحث بالعنوان...">
+                        </div>
+                        <div id="items-list" class="row g-4">
+                            <!-- Items will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content admin-card">
+                <div class="modal-header">
+                    <h5 class="modal-title card-title" id="editItemModalLabel" data-en="Edit Item" data-ar="تعديل العنصر">Edit Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-item-form">
+                        <input type="hidden" id="edit-item-id">
+                        <input type="hidden" id="edit-item-type">
+                        <div class="form-group">
+                            <label for="edit-item-title-en" class="form-label">Title (English)</label>
+                            <input type="text" class="form-control" id="edit-item-title-en" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-item-title-ar" class="form-label">Title (Arabic)</label>
+                            <input type="text" class="form-control" id="edit-item-title-ar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-item-image" class="form-label">New Cover Image (Optional)</label>
+                            <input type="file" class="form-control" id="edit-item-image" accept="image/*">
+                        </div>
+                        
+                        <div id="edit-project-fields">
+                            <div class="form-group">
+                                <label for="edit-item-live-url" class="form-label">Live URL</label>
+                                <input type="url" class="form-control" id="edit-item-live-url">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-item-github-url" class="form-label">GitHub URL</label>
+                                <input type="url" class="form-control" id="edit-item-github-url">
+                            </div>
+                        </div>
+
+                        <div id="edit-design-fields" style="display: none;">
+                             <div class="form-group">
+                                <label for="edit-item-gallery-images" class="form-label">Add More Gallery Images (Optional)</label>
+                                <input type="file" class="form-control" id="edit-item-gallery-images" accept="image/*" multiple>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-save me-2"></i>
+                            <span data-en="Save Changes" data-ar="حفظ التغييرات">Save Changes</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
