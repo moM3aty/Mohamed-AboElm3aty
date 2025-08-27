@@ -495,7 +495,7 @@ li {
 }
 .portfolio-image img {
     width: 100%;
-    height: 330px;
+    height: 330px !important;
     transition: var(--transition);
 }
 .portfolio-overlay {
