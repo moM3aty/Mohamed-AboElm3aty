@@ -1,0 +1,776 @@
+[
+  {
+    "type": "project",
+    "titleEn": "Mobil Store",
+    "titleAr": "متجر موبيل",
+    "coverImage": "assets/Websites/Mobil.png",
+    "liveUrl": "https://www.mobiloil-eg.com/",
+    "githubUrl": "https://github.com/moM3aty/Mobil-Oil.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
+    "titleEn": "Sky Health",
+    "titleAr": "سكاي هيلث",
+    "coverImage": "assets/Websites/Sky-Health.png",
+    "liveUrl": "https://skyhealth-eg.com/",
+    "githubUrl": "https://github.com/moM3aty/Sky-Health.git",
+    "id": 2,
+    "displayOrder": 3
+  },
+  {
+    "type": "project",
+    "titleEn": "Albayan",
+    "titleAr": "البيان",
+    "coverImage": "assets/Websites/albayan.png",
+    "liveUrl": "https://albayan.tech/",
+    "githubUrl": "https://github.com/moM3aty/Albayan.git",
+    "id": 3,
+    "displayOrder": 2
+  },
+  {
+    "type": "project",
+    "titleEn": "Oxford College",
+    "titleAr": "كلية أكسفورد",
+    "coverImage": "assets/Websites/oxford-college.png",
+    "liveUrl": "https://oxford-college-edu.com/",
+    "githubUrl": "https://github.com/moM3aty/Oxford-College.git",
+    "id": 4
+  },
+  {
+    "type": "project",
+    "titleEn": "BioGC",
+    "titleAr": "بيو جي سي",
+    "coverImage": "assets/Websites/BioGC.png",
+    "liveUrl": "https://drive.google.com/file/d/1yW4CC8eMlD6K4KAeng3M10T47xJpzLfr/view?usp=sharing",
+    "githubUrl": "https://github.com/moM3aty/BioGC.git",
+    "id": 5
+  },
+  {
+    "type": "project",
+    "titleEn": "GMTWEB",
+    "titleAr": "جي ام تي ويب",
+    "coverImage": "assets/Websites/GMTWEB.png",
+    "liveUrl": "https://gmtweb.online/",
+    "githubUrl": "https://github.com/moM3aty/GMTWEB.git",
+    "id": 6
+  },
+  {
+    "type": "project",
+    "titleEn": "Importers Guide",
+    "titleAr": "دليل المستوردين",
+    "coverImage": "assets/Websites/importersguide.jpg",
+    "liveUrl": "https://importersguide.online/",
+    "githubUrl": "https://github.com/moM3aty/Importers-Guide.git",
+    "id": 7,
+    "displayOrder": 10
+  },
+  {
+    "type": "project",
+    "titleEn": "Manufacturing recipes",
+    "titleAr": "وصفات التصنيع",
+    "coverImage": "assets/Websites/Manufacturing-recipes.png",
+    "liveUrl": "https://pgda.runasp.net/",
+    "githubUrl": "https://github.com/moM3aty/Manufacturing-recipes.git",
+    "id": 8,
+    "displayOrder": 11
+  },
+  {
+    "type": "project",
+    "titleEn": "Skytex",
+    "titleAr": "سكاي تكس",
+    "coverImage": "assets/Websites/Skytex.png",
+    "liveUrl": "https://skytex-eg.com/",
+    "githubUrl": "https://github.com/moM3aty/Skytex.git",
+    "id": 9
+  },
+  {
+    "type": "project",
+    "titleEn": "Portegy",
+    "titleAr": "بورتيجي",
+    "coverImage": "assets/Websites/Portegy.png",
+    "liveUrl": "https://mom3aty.github.io/Portegy/",
+    "githubUrl": "https://github.com/moM3aty/Portegy.git",
+    "id": 10,
+    "displayOrder": 9
+  },
+  {
+    "type": "project",
+    "titleEn": "Alakhoa",
+    "titleAr": "الأخوة",
+    "coverImage": "assets/Websites/alakhoa.jpg",
+    "liveUrl": "https://alakhoa.runasp.net/",
+    "githubUrl": "https://github.com/moM3aty/Alakhoa.git",
+    "id": 11
+  },
+  {
+    "type": "project",
+    "titleEn": "DUBLIN AL-MASEYA",
+    "titleAr": "دبلن الماسية",
+    "coverImage": "assets/Websites/Dublin-Almaseya.jpg",
+    "liveUrl": "https://almasydublin.runasp.net/",
+    "githubUrl": "https://github.com/moM3aty/Dublin-Almaseya.git",
+    "id": 12
+  },
+  {
+    "type": "project",
+    "titleEn": "Yummy Food",
+    "titleAr": "يامي فود",
+    "coverImage": "assets/Websites/YummyFood.png",
+    "liveUrl": "https://yummyfoodagricultural.com/",
+    "githubUrl": "https://github.com/moM3aty/YummyFood.git",
+    "id": 13,
+    "displayOrder": 7
+  },
+  {
+    "type": "project",
+    "titleEn": "Rich Minds",
+    "titleAr": "ريتش مايندز",
+    "coverImage": "assets/Websites/RichMinds.png",
+    "liveUrl": "https://richminds.ae/",
+    "githubUrl": "https://github.com/moM3aty/Rich-Minds.git",
+    "id": 14,
+    "displayOrder": 8
+  },
+  {
+    "type": "project",
+    "titleEn": "KUDZUKA",
+    "titleAr": "كودزوكا",
+    "coverImage": "assets/Websites/kudzuka.jpg",
+    "liveUrl": "https://kudzuka-nv7k0pzdc-mom3aty.vercel.app/",
+    "githubUrl": "https://github.com/moM3aty/KUDZUKA.git",
+    "id": 15
+  },
+  {
+    "type": "project",
+    "titleEn": "E-Marketing",
+    "titleAr": "إي ماركتينج",
+    "coverImage": "assets/Websites/E-Marketing.jpg",
+    "liveUrl": "https://e-marketing-g80d1c9kq-mohamed-aboelm3atys-projects.vercel.app/",
+    "githubUrl": "https://github.com/moM3aty/E-Marketing.git",
+    "id": 16
+  },
+  {
+    "type": "project",
+    "titleEn": "The Town",
+    "titleAr": "المدينة",
+    "coverImage": "assets/Websites/Town.png",
+    "liveUrl": "https://the-town-alpha.vercel.app/",
+    "githubUrl": "https://github.com/moM3aty/theTown.git",
+    "id": 17
+  },
+  {
+    "type": "project",
+    "titleEn": "X-Team",
+    "titleAr": "إكس تيم",
+    "coverImage": "assets/Websites/XTeam.jpg",
+    "liveUrl": "https://xt-eam.vercel.app/",
+    "githubUrl": "https://github.com/moM3aty/XTeam.git",
+    "id": 18
+  },
+  {
+    "type": "project",
+    "titleEn": "News Website",
+    "titleAr": "موقع إخباري",
+    "coverImage": "assets/Websites/News.png",
+    "liveUrl": "https://drive.google.com/file/d/1WCybakJOT8jqkKJXpJXIWbxfE2fwTkJJ/view?usp=sharing",
+    "githubUrl": "https://github.com/moM3aty/NewsWebsite.git",
+    "id": 19,
+    "displayOrder": 6
+  },
+  {
+    "type": "project",
+    "titleEn": "Organic",
+    "titleAr": "أورجانيك",
+    "coverImage": "assets/Websites/Organic.png",
+    "liveUrl": "https://drive.google.com/file/d/1qex6KcLiA8Z75RBxTB3LmX2a0SHh_VYc/view?usp=sharing",
+    "githubUrl": "https://github.com/moM3aty/Organic.git",
+    "id": 20,
+    "displayOrder": 4
+  },
+  {
+    "type": "project",
+    "titleEn": "Investment Portal",
+    "titleAr": "بوابة الاستثمار",
+    "coverImage": "assets/Websites/Investment-Portal.jpg",
+    "liveUrl": "https://github.com/moM3aty/Investment-Portal.git",
+    "githubUrl": "https://github.com/moM3aty/Investment-Portal.git",
+    "id": 21
+  },
+  {
+    "type": "project",
+    "titleEn": "Dopamine",
+    "titleAr": "دوبامين",
+    "coverImage": "assets/Websites/Dopamine.jpg",
+    "liveUrl": "https://drive.google.com/file/d/1COy5r6cBZ6R2u9lpfkCJng32nfCLN4O5/view?usp=sharing",
+    "githubUrl": "https://github.com/moM3aty/DopamineStore.git",
+    "id": 22,
+    "displayOrder": 5
+  },
+  {
+    "type": "design",
+    "titleEn": "Personal Logo Design",
+    "titleAr": "تصميم شعار شخصي",
+    "coverImage": "assets/Designs/126.png",
+    "galleryImages": [
+      "assets/Designs/126.png"
+    ],
+    "id": 23,
+    "displayOrder": 4
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 21",
+    "titleAr": "تصميم 2",
+    "coverImage": "assets/Designs/119.png",
+    "galleryImages": [
+      "assets/Designs/119.png"
+    ],
+    "id": 24,
+    "displayOrder": 1
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 3",
+    "titleAr": "تصميم 3",
+    "coverImage": "assets/Designs/120.png",
+    "galleryImages": [
+      "assets/Designs/120.png"
+    ],
+    "id": 25
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 4",
+    "titleAr": "تصميم 4",
+    "coverImage": "assets/Designs/123.png",
+    "galleryImages": [
+      "assets/Designs/123.png"
+    ],
+    "id": 26,
+    "displayOrder": 2
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 5",
+    "titleAr": "تصميم 5",
+    "coverImage": "assets/Designs/122.png",
+    "galleryImages": [
+      "assets/Designs/122.png"
+    ],
+    "id": 27,
+    "displayOrder": 3
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 6",
+    "titleAr": "تصميم 6",
+    "coverImage": "assets/Designs/124.png",
+    "galleryImages": [
+      "assets/Designs/124.png"
+    ],
+    "id": 28
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 7",
+    "titleAr": "تصميم 7",
+    "coverImage": "assets/Designs/129.png",
+    "galleryImages": [
+      "assets/Designs/129.png",
+      "assets/Designs/130.png"
+    ],
+    "id": 29
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 8",
+    "titleAr": "تصميم 8",
+    "coverImage": "assets/Designs/128.png",
+    "galleryImages": [
+      "assets/Designs/128.png"
+    ],
+    "id": 30
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 9",
+    "titleAr": "تصميم 9",
+    "coverImage": "assets/Designs/127.png",
+    "galleryImages": [
+      "assets/Designs/127.png"
+    ],
+    "id": 31,
+    "displayOrder": 5
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 10",
+    "titleAr": "تصميم 10",
+    "coverImage": "assets/Designs/125.png",
+    "galleryImages": [
+      "assets/Designs/125.png",
+      "assets/Designs/113.png",
+      "assets/Designs/108.png"
+    ],
+    "id": 32
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 11",
+    "titleAr": "تصميم 11",
+    "coverImage": "assets/Designs/121.png",
+    "galleryImages": [
+      "assets/Designs/121.png"
+    ],
+    "id": 33
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 12",
+    "titleAr": "تصميم 12",
+    "coverImage": "assets/Designs/118.jpg",
+    "galleryImages": [
+      "assets/Designs/118.jpg"
+    ],
+    "id": 34
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 13",
+    "titleAr": "تصميم 13",
+    "coverImage": "assets/Designs/105.png",
+    "galleryImages": [
+      "assets/Designs/105.png",
+      "assets/Designs/112.png",
+      "assets/Designs/117.png"
+    ],
+    "id": 35
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 14",
+    "titleAr": "تصميم 14",
+    "coverImage": "assets/Designs/116.png",
+    "galleryImages": [
+      "assets/Designs/116.png",
+      "assets/Designs/110.png"
+    ],
+    "id": 36
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 15",
+    "titleAr": "تصميم 15",
+    "coverImage": "assets/Designs/088.png",
+    "galleryImages": [
+      "assets/Designs/088.png",
+      "assets/Designs/115.jpeg",
+      "assets/Designs/090.png",
+      "assets/Designs/109.jpeg"
+    ],
+    "id": 37
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 16",
+    "titleAr": "تصميم 16",
+    "coverImage": "assets/Designs/114.jpg",
+    "galleryImages": [
+      "assets/Designs/114.jpg",
+      "assets/Designs/008.jpg"
+    ],
+    "id": 38
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 17",
+    "titleAr": "تصميم 17",
+    "coverImage": "assets/Designs/111.png",
+    "galleryImages": [
+      "assets/Designs/111.png",
+      "assets/Designs/089.png",
+      "assets/Designs/007.png",
+      "assets/Designs/006.png",
+      "assets/Designs/005.png",
+      "assets/Designs/004.png",
+      "assets/Designs/003.png"
+    ],
+    "id": 39
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 18",
+    "titleAr": "تصميم 18",
+    "coverImage": "assets/Designs/106.png",
+    "galleryImages": [
+      "assets/Designs/106.png"
+    ],
+    "id": 40
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 19",
+    "titleAr": "تصميم 19",
+    "coverImage": "assets/Designs/104.png",
+    "galleryImages": [
+      "assets/Designs/104.png"
+    ],
+    "id": 41
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 20",
+    "titleAr": "تصميم 20",
+    "coverImage": "assets/Designs/103.png",
+    "galleryImages": [
+      "assets/Designs/103.png"
+    ],
+    "id": 42
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 21",
+    "titleAr": "تصميم 21",
+    "coverImage": "assets/Designs/102.jpg",
+    "galleryImages": [
+      "assets/Designs/102.jpg"
+    ],
+    "id": 43
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 22",
+    "titleAr": "تصميم 22",
+    "coverImage": "assets/Designs/100.jpg",
+    "galleryImages": [
+      "assets/Designs/100.jpg"
+    ],
+    "id": 44
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 23",
+    "titleAr": "تصميم 23",
+    "coverImage": "assets/Designs/099.png",
+    "galleryImages": [
+      "assets/Designs/099.png"
+    ],
+    "id": 45
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 24",
+    "titleAr": "تصميم 24",
+    "coverImage": "assets/Designs/098.jpg",
+    "galleryImages": [
+      "assets/Designs/098.jpg"
+    ],
+    "id": 46
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 25",
+    "titleAr": "تصميم 25",
+    "coverImage": "assets/Designs/097.jpg",
+    "galleryImages": [
+      "assets/Designs/097.jpg",
+      "assets/Designs/094.jpg"
+    ],
+    "id": 47
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 26",
+    "titleAr": "تصميم 26",
+    "coverImage": "assets/Designs/096.png",
+    "galleryImages": [
+      "assets/Designs/096.png"
+    ],
+    "id": 48
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 27",
+    "titleAr": "تصميم 27",
+    "coverImage": "assets/Designs/095.png",
+    "galleryImages": [
+      "assets/Designs/095.png",
+      "assets/Designs/082.png",
+      "assets/Designs/083.png"
+    ],
+    "id": 49
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 28",
+    "titleAr": "تصميم 28",
+    "coverImage": "assets/Designs/087.png",
+    "galleryImages": [
+      "assets/Designs/087.png"
+    ],
+    "id": 50
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 29",
+    "titleAr": "تصميم 29",
+    "coverImage": "assets/Designs/086.jpg",
+    "galleryImages": [
+      "assets/Designs/086.jpg"
+    ],
+    "id": 51
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 30",
+    "titleAr": "تصميم 30",
+    "coverImage": "assets/Designs/085.png",
+    "galleryImages": [
+      "assets/Designs/085.png"
+    ],
+    "id": 52
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 31",
+    "titleAr": "تصميم 31",
+    "coverImage": "assets/Designs/084.jpg",
+    "galleryImages": [
+      "assets/Designs/084.jpg"
+    ],
+    "id": 53
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 32",
+    "titleAr": "تصميم 32",
+    "coverImage": "assets/Designs/081.png",
+    "galleryImages": [
+      "assets/Designs/081.png"
+    ],
+    "id": 54
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 33",
+    "titleAr": "تصميم 33",
+    "coverImage": "assets/Designs/031.jpg",
+    "galleryImages": [
+      "assets/Designs/031.jpg",
+      "assets/Designs/030.jpg",
+      "assets/Designs/028.jpg",
+      "assets/Designs/027.jpg",
+      "assets/Designs/024.jpg",
+      "assets/Designs/001.png",
+      "assets/Designs/042.png"
+    ],
+    "id": 55
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 34",
+    "titleAr": "تصميم 34",
+    "coverImage": "assets/Designs/079.jpg",
+    "galleryImages": [
+      "assets/Designs/079.jpg"
+    ],
+    "id": 56
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 35",
+    "titleAr": "تصميم 35",
+    "coverImage": "assets/Designs/078.jpg",
+    "galleryImages": [
+      "assets/Designs/078.jpg"
+    ],
+    "id": 57
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 36",
+    "titleAr": "تصميم 36",
+    "coverImage": "assets/Designs/076.jpg",
+    "galleryImages": [
+      "assets/Designs/076.jpg"
+    ],
+    "id": 58
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 37",
+    "titleAr": "تصميم 37",
+    "coverImage": "assets/Designs/072.png",
+    "galleryImages": [
+      "assets/Designs/072.png",
+      "assets/Designs/071.png",
+      "assets/Designs/029.jpg"
+    ],
+    "id": 59
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 38",
+    "titleAr": "تصميم 38",
+    "coverImage": "assets/Designs/070.png",
+    "galleryImages": [
+      "assets/Designs/070.png",
+      "assets/Designs/043.jpg",
+      "assets/Designs/067.png",
+      "assets/Designs/046.jpg",
+      "assets/Designs/066.png",
+      "assets/Designs/048.jpg",
+      "assets/Designs/044.jpg",
+      "assets/Designs/132.jpg",
+      "assets/Designs/131.jpg"
+    ],
+    "id": 60
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 40",
+    "titleAr": "تصميم 40",
+    "coverImage": "assets/Designs/065.jpg",
+    "galleryImages": [
+      "assets/Designs/065.jpg"
+    ],
+    "id": 61
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 41",
+    "titleAr": "تصميم 41",
+    "coverImage": "assets/Designs/064.jpg",
+    "galleryImages": [
+      "assets/Designs/064.jpg",
+      "assets/Designs/063.jpg"
+    ],
+    "id": 62,
+    "displayOrder": 6
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 42",
+    "titleAr": "تصميم 42",
+    "coverImage": "assets/Designs/060.jpg",
+    "galleryImages": [
+      "assets/Designs/060.jpg",
+      "assets/Designs/059.jpg",
+      "assets/Designs/033.png",
+      "assets/Designs/055.jpg"
+    ],
+    "id": 63
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 43",
+    "titleAr": "تصميم 43",
+    "coverImage": "assets/Designs/020.jpg",
+    "galleryImages": [
+      "assets/Designs/020.jpg",
+      "assets/Designs/057.jpg",
+      "assets/Designs/018.jpg",
+      "assets/Designs/013.jpg"
+    ],
+    "id": 64
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 44",
+    "titleAr": "تصميم 44",
+    "coverImage": "assets/Designs/056.jpg",
+    "galleryImages": [
+      "assets/Designs/056.jpg"
+    ],
+    "id": 65
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 45",
+    "titleAr": "تصميم 45",
+    "coverImage": "assets/Designs/054.jpg",
+    "galleryImages": [
+      "assets/Designs/054.jpg"
+    ],
+    "id": 66
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 46",
+    "titleAr": "تصميم 46",
+    "coverImage": "assets/Designs/053.png",
+    "galleryImages": [
+      "assets/Designs/053.png"
+    ],
+    "id": 67
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 47",
+    "titleAr": "تصميم 47",
+    "coverImage": "assets/Designs/051.jpg",
+    "galleryImages": [
+      "assets/Designs/051.jpg",
+      "assets/Designs/050.jpg",
+      "assets/Designs/049.jpg"
+    ],
+    "id": 68
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 49",
+    "titleAr": "تصميم 49",
+    "coverImage": "assets/Designs/021.jpg",
+    "galleryImages": [
+      "assets/Designs/021.jpg",
+      "assets/Designs/022.jpg",
+      "assets/Designs/023.jpg",
+      "assets/Designs/012.jpg"
+    ],
+    "id": 69
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 50",
+    "titleAr": "تصميم 50",
+    "coverImage": "assets/Designs/019.jpg",
+    "galleryImages": [
+      "assets/Designs/019.jpg"
+    ],
+    "id": 70
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 51",
+    "titleAr": "تصميم 51",
+    "coverImage": "assets/Designs/017.jpg",
+    "galleryImages": [
+      "assets/Designs/017.jpg",
+      "assets/Designs/016.jpg"
+    ],
+    "id": 71
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 52",
+    "titleAr": "تصميم 52",
+    "coverImage": "assets/Designs/015.jpg",
+    "galleryImages": [
+      "assets/Designs/015.jpg",
+      "assets/Designs/014.jpg"
+    ],
+    "id": 72
+  },
+  {
+    "type": "design",
+    "titleEn": "Design 53",
+    "titleAr": "تصميم 53",
+    "coverImage": "assets/Designs/002.jpg",
+    "galleryImages": [
+      "assets/Designs/002.jpg"
+    ],
+    "id": 73
+  }
+]

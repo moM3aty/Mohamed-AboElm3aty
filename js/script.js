@@ -223,8 +223,8 @@ class PortfolioManager {
             const viewButton = e.target.closest('.view-design-btn');
             if (viewButton) {
                 e.preventDefault();
-                const index = parseInt(viewButton.dataset.index);
-                const item = this.portfolioItems[index];
+                const itemId = parseInt(viewButton.dataset.id);
+                const item = this.portfolioItems.find(p => p.id === itemId);
                 if (item && item.galleryImages) this.openDesignModal(item);
             }
         });
@@ -284,31 +284,52 @@ class PortfolioManager {
         this.langManager.updateLanguage();
         this.applyMasonryLayout('#portfolio-grid-full');
     }
-
+    
     applyMasonryLayout(gridSelector) {
         const grid = document.querySelector(gridSelector);
         if (!grid) return;
-
-        const items = grid.querySelectorAll('.portfolio-item-wrapper');
-        const rowHeight = 7;
-        const rowGap = 24;
-
-        items.forEach(item => {
-            const img = item.querySelector('img');
-            const setSpan = () => {
+    
+        const items = Array.from(grid.querySelectorAll('.portfolio-item-wrapper'));
+        if (items.length === 0) return;
+    
+        const rowHeight = 10; 
+        const rowGap =  24;
+    
+        const setSpans = () => {
+            items.forEach(item => {
                 const contentHeight = item.querySelector('.portfolio-item').clientHeight;
-                const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight));
-                item.style.gridRowEnd = `span ${rowSpan}`;
-            };
-
+                const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+                item.style.gridRowEnd = `span 10`;
+            });
+        };
+    
+        const images = items.map(item => item.querySelector('img')).filter(img => img);
+        let imagesLoaded = 0;
+    
+        if (images.length === 0) {
+            setSpans();
+            return;
+        }
+    
+        images.forEach(img => {
             if (img.complete) {
-                setSpan();
+                imagesLoaded++;
             } else {
-                img.addEventListener('load', setSpan);
+                img.onload = () => {
+                    imagesLoaded++;
+                    if (imagesLoaded === images.length) {
+                        setSpans();
+                    }
+                };
+                img.onerror = img.onload; 
             }
         });
+    
+        if (imagesLoaded === images.length) {
+            setSpans();
+        }
     }
-
+    
     handleFilterClick(e) {
         if (!e.target.matches('.filter-btn-new')) return;
         document.querySelector('#portfolio-filters .active').classList.remove('active');
@@ -335,8 +356,7 @@ class PortfolioManager {
         if (!modal || !modalImagesContainer) return;
 
         modalImagesContainer.innerHTML = item.galleryImages.map(imgSrc => {
-            const url = imgSrc instanceof Blob ? URL.createObjectURL(imgSrc) : imgSrc;
-            return `<div class="swiper-slide"><img src="${url}" class="img-fluid"></div>`;
+            return `<div class="swiper-slide"><img src="${imgSrc}" class="img-fluid"></div>`;
         }).join('');
 
         modal.classList.add('show');
@@ -358,9 +378,6 @@ class PortfolioManager {
     }
 
     createPortfolioItemHTML(item, isHomePageGrid = false) {
-        const originalIndex = this.portfolioItems.findIndex(p => p.id === item.id);
-        const imageUrl = item.coverImage instanceof Blob ? URL.createObjectURL(item.coverImage) : item.coverImage;
-
         let linksHtml = '';
         if (item.type === 'project') {
             linksHtml = `
@@ -370,8 +387,8 @@ class PortfolioManager {
                 <a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
             </div>`;
         } else {
-            linksHtml = ` <div class="portfolio-links">
-            <button class="view-design-btn" data-index="${originalIndex}"><i class="fas fa-eye"></i></button></div>`;
+            linksHtml = `<div class="portfolio-links">
+            <button class="view-design-btn" data-id="${item.id}"><i class="fas fa-eye"></i></button></div>`;
         }
 
         const wrapperClass = isHomePageGrid ? 'col-md-6 col-lg-6' : 'portfolio-item-wrapper';
@@ -380,7 +397,7 @@ class PortfolioManager {
             <div class="${wrapperClass}">
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="${imageUrl}" alt="${item.titleEn}" loading="lazy">
+                        <img src="${item.coverImage}" alt="${item.titleEn}" loading="lazy">
                         <div class="portfolio-overlay">
                         ${linksHtml}
                         </div>
@@ -400,7 +417,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector(".contact-form");
     if (form) {
-        let currentErrors = {};
         const errors = {
             en: {
                 name: "Please enter your name.",
@@ -419,8 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const validateForm = () => {
             const lang = document.documentElement.lang || "en";
             let valid = true;
-            currentErrors = {};
-
+            
             document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
 
             const nameField = form.querySelector("input[name='name']");
@@ -429,30 +444,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const messageField = form.querySelector("textarea[name='message']");
 
             if (!nameField?.value.trim()) {
-                nameField?.nextElementSibling && (nameField.nextElementSibling.textContent = errors[lang].name);
+                nameField.closest('.form-group').querySelector('.error-msg').textContent = errors[lang].name;
                 valid = false;
             }
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailField?.value.trim() || !emailRegex.test(emailField.value)) {
-                emailField?.nextElementSibling && (emailField.nextElementSibling.textContent = errors[lang].email);
+                emailField.closest('.form-group').querySelector('.error-msg').textContent = errors[lang].email;
                 valid = false;
             }
 
             if (!subjectField?.value.trim()) {
-                subjectField?.nextElementSibling && (subjectField.nextElementSibling.textContent = errors[lang].subject);
+                subjectField.closest('.form-group').querySelector('.error-msg').textContent = errors[lang].subject;
                 valid = false;
             }
 
             if (!messageField?.value.trim()) {
-                messageField?.nextElementSibling && (messageField.nextElementSibling.textContent = errors[lang].message);
+                messageField.closest('.form-group').querySelector('.error-msg').textContent = errors[lang].message;
                 valid = false;
             }
 
             return valid;
         };
 
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", function(e) {
             e.preventDefault();
             if (validateForm()) {
                 const name = form.querySelector("input[name='name']").value.trim();
@@ -470,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const downloadCvButtons = document.querySelectorAll('.download-cv');
     downloadCvButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function() {
             const filePath = this.getAttribute('data-file');
             if (filePath) {
                 const link = document.createElement('a');

@@ -1,4 +1,3 @@
-// Register GSAP plugins immediately when the script loads
 gsap.registerPlugin(ScrollTrigger);
 
 class AnimationsManager {
@@ -7,7 +6,6 @@ class AnimationsManager {
     }
 
     init() {
-        // Run animations only if the corresponding elements exist on the page
         if (document.querySelector('.hero-section')) {
             this.heroAnimations();
         }
@@ -17,15 +15,9 @@ class AnimationsManager {
         if (document.querySelector('.skill-card')) {
             this.skillAnimations();
         }
-        if (document.querySelector('.portfolio-item')) {
-            this.portfolioAnimations();
-        }
-        if (document.querySelector('.contact-item')) {
-            this.contactAnimations();
-        }
         if (document.querySelector('#network-canvas')) {
             this.backgroundAnimations();
-            new NetworkCanvas(); // Initialize canvas only if it exists
+            new NetworkCanvas();
         }
         
         this.mouseFollowAnimations();
@@ -151,57 +143,7 @@ class AnimationsManager {
                 opacity: 0,
                 ease: 'power2.out'
             });
-            // The logic for animating the skill-bar itself has been moved to script.js
-            // to be triggered by tab clicks, so we remove it from here.
         });
-    }
-
-    portfolioAnimations() {
-        // This function can be used later if needed
-    }
-
-    contactAnimations() {
-        gsap.utils.toArray('.contact-item').forEach((item, index) => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%'
-                },
-                duration: 0.8,
-                opacity: 0,    
-                delay: index * 0.1,
-                ease: 'power2.out'
-            });
-        });
-
-        if (document.querySelector('.social-links')) {
-            gsap.from('.social-link', {
-                scrollTrigger: {
-                    trigger: '.social-links',
-                    start: 'top 80%'
-                },
-                duration: 0.6,
-                scale: 0,
-                opacity: 0,
-                stagger: 0.1,
-                delay: 0.5,
-                ease: 'back.out(2)'
-            });
-        }
-
-        if (document.querySelector('.contact-form')) {
-            gsap.from('.contact-form .form-group', {
-                scrollTrigger: {
-                    trigger: '.contact-form',
-                    start: 'top 80%'
-                },
-                duration: 0.8,
-                y: 30,
-                opacity: 0,
-                stagger: 0.1,
-                ease: 'power2.out'
-            });
-        }
     }
 
     backgroundAnimations() {
@@ -230,13 +172,9 @@ class AnimationsManager {
         });
     }
 
-    mouseFollowAnimations() {
-        // This can be expanded later if needed
-    }
+    mouseFollowAnimations() {}
 
-    initButtonAnimations() {
-        // This can be expanded later if needed
-    }
+    initButtonAnimations() {}
     
     initPageTransitions() {
         gsap.from('body', {
