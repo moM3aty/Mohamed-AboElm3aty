@@ -1,4 +1,14 @@
 [
+   {
+    "type": "project",
+    "titleEn": "Ornix Motors",
+    "titleAr": "أورنيكس موتورز",
+    "coverImage": "assets/Websites/ornixmotors.png",
+    "liveUrl": "https://ornixmotors.com/",
+    "githubUrl": "https://github.com/moM3aty/Mohamed-AboElm3aty.git",
+    "id": 1,
+    "displayOrder": 1
+  },
     {
     "type": "project",
     "titleEn": "Red Sea Arzu",
