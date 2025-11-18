@@ -1,5 +1,15 @@
 [
-     {
+  {
+    "type": "project",
+    "titleEn": "UK-Board",
+    "titleAr": "مجلس المملكة المتحدة",
+    "coverImage": "assets/Websites/UK-Board.png",
+    "liveUrl": "https://the-uk-board-edu.com/",
+    "githubUrl": "https://github.com/moM3aty/UK-Board.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
     "type": "project",
     "titleEn": "Mithaqq",
     "titleAr": "ميثاق",
@@ -9,7 +19,7 @@
     "id": 1,
     "displayOrder": 1
   },
-   {
+  {
     "type": "project",
     "titleEn": "Ornix Motors",
     "titleAr": "أورنيكس موتورز",
@@ -19,7 +29,7 @@
     "id": 1,
     "displayOrder": 1
   },
-    {
+  {
     "type": "project",
     "titleEn": "Red Sea Arzu",
     "titleAr": "البحر الأحمر أرزو",
@@ -28,7 +38,8 @@
     "githubUrl": "https://github.com/moM3aty/Red-Sea-Arzu.git",
     "id": 1,
     "displayOrder": 1
-  },  {
+  },
+  {
     "type": "project",
     "titleEn": "Invest Group",
     "titleAr": "مجموعة الاستثمار",
@@ -37,7 +48,8 @@
     "githubUrl": "https://github.com/moM3aty/Invest-Group.git",
     "id": 1,
     "displayOrder": 1
-  },  {
+  },
+  {
     "type": "project",
     "titleEn": "Luxury Vision",
     "titleAr": "رؤية فاخرة",
@@ -46,7 +58,8 @@
     "githubUrl": "https://github.com/moM3aty/Luxury-Vision.git",
     "id": 1,
     "displayOrder": 1
-  },{
+  },
+  {
     "type": "project",
     "titleEn": "Mobil Store",
     "titleAr": "متجر موبيل",
