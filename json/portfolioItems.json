@@ -1,6 +1,15 @@
 [
   {
     "type": "project",
+    "titleEn": "Almazaya-Travel",
+    "titleAr": "بيت المزايا التجارية",
+    "coverImage": "assets/Websites/Almzaya-Travel.png",
+    "liveUrl": "https://almazayatravel.sa/",
+    "githubUrl": "https://github.com/moM3aty/Almazaya-Travel.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
     "titleEn": "UK-Board",
     "titleAr": "مجلس المملكة المتحدة",
     "coverImage": "assets/Websites/UK-Board.png",
