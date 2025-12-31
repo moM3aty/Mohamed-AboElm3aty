@@ -1,6 +1,36 @@
 [
   {
     "type": "project",
+    "titleEn": "Dr.Ammar",
+    "titleAr": "د/عمار",
+    "coverImage": "assets/Websites/Ammar.png",
+    "liveUrl": "https://drammarghadieh.com/",
+    "githubUrl": "https://github.com/moM3aty/AmmarGadiaAcademy.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
+    "titleEn": "Ashraf-Alkhawalda",
+    "titleAr": "أشرف الخوالدة",
+    "coverImage": "assets/Websites/Ashraf.png",
+    "liveUrl": "https://ashrafalkhawalda.com/",
+    "githubUrl": "https://github.com/moM3aty/PhoneStore.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
+    "titleEn": "EMAC",
+    "titleAr": "إيماك",
+    "coverImage": "assets/Websites/EMAC.png",
+    "liveUrl": "https://emac-aw.com/",
+    "githubUrl": "https://github.com/moM3aty/EMAC.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
     "titleEn": "Almazaya-Travel",
     "titleAr": "بيت المزايا التجارية",
     "coverImage": "assets/Websites/Almzaya-Travel.png",
@@ -8,7 +38,8 @@
     "githubUrl": "https://github.com/moM3aty/Almazaya-Travel.git",
     "id": 1,
     "displayOrder": 1
-  },{
+  },
+  {
     "type": "project",
     "titleEn": "UK-Board",
     "titleAr": "مجلس المملكة المتحدة",
