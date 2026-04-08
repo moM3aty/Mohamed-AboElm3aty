@@ -1,6 +1,16 @@
 [
   {
     "type": "project",
+    "titleEn": "Nabd Al Tamayyuz",
+    "titleAr": "نبض التميز الذهبي",
+    "coverImage": "assets/Websites/nabd.png",
+    "liveUrl": "https://nabdaltamayyuz.com/",
+    "githubUrl": "https://github.com/moM3aty/NabdAltamayyuz.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
     "titleEn": "Dr.Ammar",
     "titleAr": "د/عمار",
     "coverImage": "assets/Websites/Ammar.png",
