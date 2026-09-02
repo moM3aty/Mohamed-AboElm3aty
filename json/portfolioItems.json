@@ -18,6 +18,42 @@
     "githubUrl": "https://github.com/moM3aty/Signature-Travel.git",
     "id": 1,
     "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "Bas-Group",
+    "titleAr": "شركة باس للنقل",
+    "coverImage": "assets/Websites/basgroup.png",
+    "liveUrl": "https://basgroup-sa.com",
+    "githubUrl": "https://github.com/moM3aty/basgroup.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "Steel",
+    "titleAr": "ستيل",
+    "coverImage": "assets/Websites/steel.png",
+    "liveUrl": "https://steelksa.com",
+    "githubUrl": "https://github.com/moM3aty/Steel-ksa.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "kuwait-M  ove",
+    "titleAr": "نقل العفش بالكويت",
+    "coverImage": "assets/Websites/kuwaitmove.png",
+    "liveUrl": "https://kuwaitmovepro.com",
+    "githubUrl": "https://github.com/moM3aty/kuwait-move.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "Sona3-Alzaka",
+    "titleAr": "صناع الزكاة",
+    "coverImage": "assets/Websites/sonaa-alzaka.png",
+    "liveUrl": "https://soneaalzaka.com",
+    "githubUrl": "https://github.com/moM3aty/Sona3-Alzaka.git",
+    "id": 1,
+    "displayOrder": 1
   },
   {
     "type": "project",
