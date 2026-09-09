@@ -20,6 +20,33 @@
     "displayOrder": 1
   },{
     "type": "project",
+    "titleEn": "Decore-MKA",
+    "titleAr": "شركة ديكور مكة",
+    "coverImage": "assets/Websites/Decore-MKA.png",
+    "liveUrl": "https://decoremka.com",
+    "githubUrl": "https://github.com/moM3aty/Decore-MKA.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "Gold-Table",
+    "titleAr": "شركة الطاولة الذهبية",
+    "coverImage": "assets/Websites/Gold-Table.png",
+    "liveUrl": "https://goldentableksa.com/",
+    "githubUrl": "https://github.com/moM3aty/Gold-Table.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
+    "titleEn": "Islam-Garden",
+    "titleAr": "مشتل الاسلام",
+    "coverImage": "assets/Websites/Islam-Garden.png",
+    "liveUrl": "https://islamgardens-sa.com",
+    "githubUrl": "https://github.com/moM3aty/Islam-Garden.git",
+    "id": 1,
+    "displayOrder": 1
+  },{
+    "type": "project",
     "titleEn": "Bas-Group",
     "titleAr": "شركة باس للنقل",
     "coverImage": "assets/Websites/basgroup.png",
@@ -38,7 +65,7 @@
     "displayOrder": 1
   },{
     "type": "project",
-    "titleEn": "kuwait-M  ove",
+    "titleEn": "kuwait-Move",
     "titleAr": "نقل العفش بالكويت",
     "coverImage": "assets/Websites/kuwaitmove.png",
     "liveUrl": "https://kuwaitmovepro.com",
