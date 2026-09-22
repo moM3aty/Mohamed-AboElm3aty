@@ -11,6 +11,16 @@
   },
   {
     "type": "project",
+    "titleEn": "Egypt Travel Square",
+    "titleAr": "إيجيبت ترافيل سكوير",
+    "coverImage": "assets/Websites/egypttravel.png",
+    "liveUrl": "https://egypttravelsquare.com/",
+    "githubUrl": "https://github.com/moM3aty/Egypt-Travel-Square.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
     "titleEn": "Signature Travel",
     "titleAr": "سيجنتشر ترافل",
     "coverImage": "assets/Websites/Signature.png",
@@ -43,6 +53,26 @@
     "coverImage": "assets/Websites/Islam-Garden.png",
     "liveUrl": "https://islamgardens-sa.com",
     "githubUrl": "https://github.com/moM3aty/Islam-Garden.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
+    "titleEn": "Zahret Elganoub",
+    "titleAr": "زهرة الجنوب",
+    "coverImage": "assets/Websites/Zahret-Elganoub.png",
+    "liveUrl": "https://janoubmove.com/",
+    "githubUrl": "https://github.com/moM3aty/Zahret-Elganoub.git",
+    "id": 1,
+    "displayOrder": 1
+  },
+  {
+    "type": "project",
+    "titleEn": "MRM GROUP OF COMPANIES",
+    "titleAr": "مجموعة شركات ام ار ام",
+    "coverImage": "assets/Websites/MRM.png",
+    "liveUrl": "https://mrmgroup.ae/",
+    "githubUrl": "https://github.com/moM3aty/MRM.git",
     "id": 1,
     "displayOrder": 1
   },{
